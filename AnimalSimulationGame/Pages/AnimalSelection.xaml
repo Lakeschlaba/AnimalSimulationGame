@@ -14,7 +14,7 @@
         <Button Name="Tier4" Content="Tier 4" HorizontalAlignment="Left" Margin="451,234,0,0" VerticalAlignment="Top" Height="44" Width="159"/>
         <Button Name="Tier3" Content="Tier 3" HorizontalAlignment="Left" Margin="198,234,0,0" VerticalAlignment="Top" Height="44" Width="158"/>
         <Label Content="Animal Selection" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold"/>
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
 
     </Grid>
 </Window>

@@ -11,24 +11,31 @@
         <Label Name="Dodo" Content="Dodo" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Opossum" Content="Opossum" HorizontalAlignment="Left" Margin="600,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Wombat" Content="Wombat" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Name="Bajo" Content="Bajo" HorizontalAlignment="Left" Margin="619,450,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Name="Megalodon" Content="Megalodon" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,450,0,0" FontSize="16" FontWeight="Bold"/>
-        <Label Name="Kugelfisch" Content="Kugelfisch" HorizontalAlignment="Left" Margin="82,450,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.702,4.162" FontSize="16" FontWeight="Bold"/>
+        <Label Name="Bajo" Content="Bajo" HorizontalAlignment="Left" Margin="619,525,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Name="Megalodon" Content="Megalodon" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,525,0,0" FontSize="16" FontWeight="Bold"/>
+        <Label Name="Kugelfisch" Content="Kugelfisch" HorizontalAlignment="Left" Margin="82,525,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.702,4.162" FontSize="16" FontWeight="Bold"/>
 
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="154,578,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="52,563,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="166,553,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="52,648,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="67,668,0,0" VerticalAlignment="Top" Width="84"/>
-        <Button Content="Buy" HorizontalAlignment="Left" Margin="112,603,0,0" VerticalAlignment="Top" Width="84"/>
-        <Label Content="Price: 800$" HorizontalAlignment="Left" Margin="624,760,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price: 500$" HorizontalAlignment="Left" Margin="462,755,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price: 1000$" HorizontalAlignment="Left" Margin="600,836,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.927,3.314"/>
-        <Label Content="Price: 4000$" HorizontalAlignment="Left" Margin="508,815,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price: 7800$" HorizontalAlignment="Left" Margin="402,823,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price: 10000$" HorizontalAlignment="Left" Margin="577,729,0,0" VerticalAlignment="Top"/>
+        <Button Content="Buy" HorizontalAlignment="Left" Margin="40,400,0,0" VerticalAlignment="Top" Width="171" Height="41"/>
+        <Button Content="Buy" HorizontalAlignment="Center" Margin="0,400,0,0" VerticalAlignment="Top" Width="172" Height="41"/>
+        <Button Content="Buy" HorizontalAlignment="Left" Margin="555,400,0,0" VerticalAlignment="Top" Width="171" Height="41"/>
+        <Button Content="Buy" HorizontalAlignment="Left" Margin="41,798,0,0" VerticalAlignment="Top" Width="171" Height="41"/>
+        <Button Content="Buy" HorizontalAlignment="Center" Margin="0,798,0,0" VerticalAlignment="Top" Width="171" Height="41"/>
+        <Button Content="Buy" HorizontalAlignment="Left" Margin="555,798,0,0" VerticalAlignment="Top" Width="171" Height="41"/>
+
+        <Label Content="Price: 800$" HorizontalAlignment="Center" Margin="0,358,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price: 500$" HorizontalAlignment="Left" Margin="92,358,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price: 1000$" HorizontalAlignment="Left" Margin="603,358,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.927,3.314"/>
+        <Label Content="Price: 4000$" HorizontalAlignment="Left" Margin="86,738,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price: 7800$" HorizontalAlignment="Center" Margin="0,738,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price: 10000$" HorizontalAlignment="Left" Margin="600,738,0,0" VerticalAlignment="Top"/>
         <Label Content="Animal Store" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="52,190,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="334,190,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="577,190,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="52,565,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="334,565,0,0" VerticalAlignment="Top" Width="150"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="577,565,0,0" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>
