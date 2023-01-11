@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="AnimalsHome" Height="450" Width="800">
     <Grid>
         <Button Name="AnimalStoreBtn" Content="Animal Store" HorizontalAlignment="Left" Margin="205,119,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="AnimalStoreBtn_Click"/>
@@ -13,5 +14,6 @@
         <Button Name="ItemsStore" Content="Item Store" HorizontalAlignment="Left" Margin="448,190,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="ItemsStore_Click"/>
         <Button Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,293,0,0" VerticalAlignment="Top" Height="44" Width="160" Click="Exit_Click"/>
         <Label Content="Animal Home" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>

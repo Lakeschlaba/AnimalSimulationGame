@@ -21,5 +21,12 @@ namespace AnimalSimulationGame
         {
             InitializeComponent();
         }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            AnimalsHome animalsHome = new AnimalsHome();
+            animalsHome.Show();
+            this.Close();
+        }
     }
 }

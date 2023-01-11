@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
-        Title="AnimalStore" Height="1050" Width="800">
-    <Grid Margin="0,0,0,-6">
+        WindowStartupLocation="CenterScreen"
+        Title="AnimalStore" Height="1000" Width="800">
+    <Grid Margin="0,0,0,0">
         <Label Name="Dodo" Content="Dodo" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Opossum" Content="Opossum" HorizontalAlignment="Left" Margin="600,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Wombat" Content="Wombat" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -26,8 +27,8 @@
         <Label Content="Price: 4000$" HorizontalAlignment="Left" Margin="508,815,0,0" VerticalAlignment="Top"/>
         <Label Content="Price: 7800$" HorizontalAlignment="Left" Margin="402,823,0,0" VerticalAlignment="Top"/>
         <Label Content="Price: 10000$" HorizontalAlignment="Left" Margin="577,729,0,0" VerticalAlignment="Top"/>
-        <Button Name="BackBtn" Content=""  Margin="10,10,670,996"/>
         <Label Content="Animal Store" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
 
     </Grid>
 </Window>

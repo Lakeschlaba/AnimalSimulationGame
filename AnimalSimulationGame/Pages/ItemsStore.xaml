@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="ItemsStore" Height="450" Width="800">
     <Grid>
-        
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Item Store" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>
