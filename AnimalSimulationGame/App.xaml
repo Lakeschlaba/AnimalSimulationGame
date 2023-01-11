@@ -1,0 +1,9 @@
+﻿<Application x:Class="AnimalSimulationGame.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:AnimalSimulationGame"
+             StartupUri="Pages/AnimalsMenu.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
