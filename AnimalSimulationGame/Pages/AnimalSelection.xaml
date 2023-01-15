@@ -8,11 +8,11 @@
         WindowStartupLocation="CenterScreen"
         Title="AnimalSelection" Height="450" Width="800">
     <Grid>
-        <Button Name="Tier1" Content="Tier 1" HorizontalAlignment="Left" Margin="197,131,0,0" VerticalAlignment="Top" Height="44" Width="159"/>
-        <Button Name="ExitBtn" Content="Exit" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Height="44" Width="160"/>
-        <Button Name="Tier2" Content="Tier 2" HorizontalAlignment="Left" Margin="451,131,0,0" VerticalAlignment="Top" Height="44" Width="159"/>
-        <Button Name="Tier4" Content="Tier 4" HorizontalAlignment="Left" Margin="451,234,0,0" VerticalAlignment="Top" Height="44" Width="159"/>
-        <Button Name="Tier3" Content="Tier 3" HorizontalAlignment="Left" Margin="198,234,0,0" VerticalAlignment="Top" Height="44" Width="158"/>
+        <Button Name="Tier1" Content="Tier 1" HorizontalAlignment="Left" Margin="197,131,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="Tier1_Click" />
+        <Button Name="ExitBtn" Content="Exit" HorizontalAlignment="Center" Margin="0,324,0,0" VerticalAlignment="Top" Height="44" Width="160" Click="ExitBtn_Click" />
+        <Button Name="Tier2" Content="Tier 2" HorizontalAlignment="Left" Margin="451,131,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="Tier2_Click" />
+        <Button Name="Tier4" Content="Tier 4" HorizontalAlignment="Left" Margin="451,234,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="Tier4_Click" />
+        <Button Name="Tier3" Content="Tier 3" HorizontalAlignment="Left" Margin="198,234,0,0" VerticalAlignment="Top" Height="44" Width="158" Click="Tier3_Click" />
         <Label Content="Animal Selection" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
         <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
 

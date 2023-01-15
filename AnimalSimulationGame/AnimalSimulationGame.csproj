@@ -14,4 +14,10 @@
     <Resource Include="Download.jpg" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Tier1 - Kopieren %282%29.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
 </Project>

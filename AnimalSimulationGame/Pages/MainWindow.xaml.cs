@@ -23,26 +23,37 @@ namespace AnimalSimulationGame
     {
         static DispatcherTimer timer = new DispatcherTimer();
 
+        public Tier1 ErstesTier1 = new Tier1();
+
         public MainWindow()
         {
             InitializeComponent();
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Tick += t_Tick;
             timer.Start();
-            GesundheitBar.Value = 100;
         }
 
-        public class animals
+        public class Animals
         {
 
         }
 
-        public class lama : animals
+        public class ErstesTier : Animals
         {
 
         }
 
-        public class opossum : animals
+        public class ZweitesTier : Animals
+        {
+
+        }
+
+        public class DrittesTier : Animals
+        {
+
+        }
+
+        public class ViertesTier : Animals
         {
 
         }
@@ -73,7 +84,7 @@ namespace AnimalSimulationGame
             
         }
 
-        private void health()
+        public void health()
         {
             if(FutterBar.Value == FutterBar.Minimum)
             {
