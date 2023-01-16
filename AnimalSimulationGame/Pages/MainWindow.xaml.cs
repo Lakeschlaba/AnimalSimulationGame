@@ -35,7 +35,7 @@ namespace AnimalSimulationGame
 
         public class Animals
         {
-
+          
         }
 
         public class ErstesTier : Animals
@@ -93,4 +93,6 @@ namespace AnimalSimulationGame
         }
 
     }
+
+    
 }

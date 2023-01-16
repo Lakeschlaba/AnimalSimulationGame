@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace AnimalSimulationGame
 {
@@ -17,6 +18,7 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class AnimalsHome : Window
     {
+
         public AnimalsHome()
         {
             InitializeComponent();
@@ -54,5 +56,6 @@ namespace AnimalSimulationGame
         {
             this.Close();
         }
+
     }
 }
