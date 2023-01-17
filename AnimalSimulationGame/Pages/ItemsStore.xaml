@@ -18,5 +18,6 @@
         <Image HorizontalAlignment="Left" Height="150" Margin="512,156,0,0" VerticalAlignment="Top" Width="150"/>
         <Label Content="Price: 50$ pro Portion" HorizontalAlignment="Left" Margin="174,313,0,0" VerticalAlignment="Top"/>
         <Label Content="Price: 200$" HorizontalAlignment="Left" Margin="554,313,0,0" VerticalAlignment="Top"/>
+        <Label Name="futterAnzahlLabel" Content="" HorizontalAlignment="Left" Margin="621,34,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

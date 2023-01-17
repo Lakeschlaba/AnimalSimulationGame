@@ -20,6 +20,7 @@ namespace AnimalSimulationGame
     public partial class ItemsStore : Window
     {
         public int futterAnzahl;
+        public List<int> futterAnzahlList= new List<int>();
         public ItemsStore()
         {
             InitializeComponent();
@@ -29,12 +30,16 @@ namespace AnimalSimulationGame
         {
             AnimalsHome animalsHome = new AnimalsHome();
             animalsHome.Show();
-            this.Close();
+            //this.Close();
         }
 
         private void buyFutterBtn_Click(object sender, RoutedEventArgs e)
         {
+            futterAnzahlList.Add(futterAnzahl);
             futterAnzahl += 1;
+            futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
+
+            
         }
 
     }

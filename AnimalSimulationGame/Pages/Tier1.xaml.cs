@@ -21,13 +21,14 @@ namespace AnimalSimulationGame
         DispatcherTimer timer = new DispatcherTimer();
         Animals erstesTier = new ErstesTier();
         private bool animalNachricht;
-
+        
         public Tier1()
         {
             InitializeComponent();
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
+
             
         }
 
@@ -38,7 +39,7 @@ namespace AnimalSimulationGame
             futter1.Value = erstesTier.futterValue;
             erstesTier.health();
             erstesTier.futterValue -= 0.05;
-            
+       
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
