@@ -31,26 +31,29 @@ namespace AnimalSimulationGame
             timer.Interval = TimeSpan.FromMilliseconds(20);
             timer.Tick += t_Tick;
             timer.Start();
+
         }
 
         public class Animals
         {
-          
+  
+ 
         }
 
         public class ErstesTier : Animals
         {
-
+            
+   
         }
 
         public class ZweitesTier : Animals
         {
-
+       
         }
 
         public class DrittesTier : Animals
         {
-
+  
         }
 
         public class ViertesTier : Animals

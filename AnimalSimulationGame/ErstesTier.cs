@@ -15,9 +15,9 @@ namespace AnimalSimulationGame
 {
     public class ErstesTier : Animals
     {
-        public override void animalSpeak()
+        public void animalSpeak()
         {
-            MessageBox.Show("Danke fürs Strecheln");
+            MessageBox.Show("Das zweite Tier bedankt sich bei Dir");
         }
     }
 }

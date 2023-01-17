@@ -22,6 +22,7 @@ namespace AnimalSimulationGame
         public double gesundheitValue = 50;
         public double futterValue = 10;
 
+  
         public void health()
         {
             if (futterValue <= 0)
@@ -61,9 +62,10 @@ namespace AnimalSimulationGame
             }
         }
 
-        public virtual void animalSpeak()
+        public void animalSpeak()
         {
-            MessageBox.Show("Danke fürs Strecheln");
+       
+            MessageBox.Show("Ein Animal bedankt sich");
         }
     }
 }

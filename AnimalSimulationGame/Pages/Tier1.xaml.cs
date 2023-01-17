@@ -19,7 +19,8 @@ namespace AnimalSimulationGame
     public partial class Tier1 : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        ErstesTier erstesTier = new ErstesTier();
+        Animals erstesTier = new ErstesTier();
+        private bool animalNachricht;
 
         public Tier1()
         {
@@ -27,6 +28,7 @@ namespace AnimalSimulationGame
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
+            
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -53,7 +55,13 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            erstesTier.animalSpeak();
+            Random random = new Random();
+            animalNachricht = random.Next(2) == 1;
+
+            if(animalNachricht == true)
+            {
+                erstesTier.animalSpeak();
+            }
             erstesTier.streicheln();
         }
     }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Reflection.Emit;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,8 +19,7 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class ItemsStore : Window
     {
-        int futterAnzahl;
-
+        public int futterAnzahl;
         public ItemsStore()
         {
             InitializeComponent();
@@ -31,9 +32,10 @@ namespace AnimalSimulationGame
             this.Close();
         }
 
-        private void futterBuy_Click(object sender, RoutedEventArgs e)
+        private void buyFutterBtn_Click(object sender, RoutedEventArgs e)
         {
-            labelFutterAnzahl.Content = "" + 1*futterAnzahl;
+            futterAnzahl += 1;
         }
+
     }
 }
