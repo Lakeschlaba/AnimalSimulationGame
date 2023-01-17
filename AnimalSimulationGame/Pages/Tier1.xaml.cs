@@ -18,19 +18,25 @@ namespace AnimalSimulationGame
     /// </summary>  
     public partial class Tier1 : Window
     {
+        DispatcherTimer timer = new DispatcherTimer();
         ErstesTier erstesTier = new ErstesTier();
 
         public Tier1()
         {
             InitializeComponent();
-            gesundheit1.Value = erstesTier.gesundheitValue;
-            futter1.Value = erstesTier.futterValue;
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += t_Tick;
+            timer.Start();
         }
 
         private void t_Tick(object sender, EventArgs e)
         {
-            futter1.Value -= 0.5;
+
+            gesundheit1.Value = erstesTier.gesundheitValue;
+            futter1.Value = erstesTier.futterValue;
             erstesTier.health();
+            erstesTier.futterValue -= 0.05;
+            
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -40,16 +46,15 @@ namespace AnimalSimulationGame
             this.Close();
         }
 
-        private void Button_Click_Fuettern(object sender, RoutedEventArgs e)
+        private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
-            erstesTier.futterValue += 0.5;
+            erstesTier.eat();
         }
 
-        private void Button_Click_Streicheln(object sender, RoutedEventArgs e)
+        private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            erstesTier.gesundheitValue += 0.5;
+            erstesTier.animalSpeak();
+            erstesTier.streicheln();
         }
     }
-
-
 }

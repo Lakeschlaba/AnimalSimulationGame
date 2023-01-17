@@ -18,40 +18,57 @@ namespace AnimalSimulationGame
 {
     public partial class Animals : Window
     {
-        //static DispatcherTimer timer = new DispatcherTimer();
 
-        public double _MaxValue = 100;
-        public double _MinValue = 0;
-
-        public double gesundheitValue = 100;
-        public double futterValue = 0;
-
-        public Animals()
-        {
-            //timer.Interval = TimeSpan.FromMilliseconds(20);
-            //timer.Tick += t_Tick;
-            //timer.Start();
-        }
-
-        //private void t_Tick(object sender, EventArgs e)
-        //{
-        //    futterValue -= 0.5;
-        //    health();
-        //}
+        public double gesundheitValue = 50;
+        public double futterValue = 10;
 
         public void health()
         {
-            if (futterValue == 0)
+            if (futterValue <= 0)
             {
-                gesundheitValue -= 0.5;
+                gesundheitValue -= 0.055;
+            }
+            else
+            {
+                gesundheitValue += 0.055;
             }
         }
 
         public void eat()
         {
-            //if ()
+            futterValue += 0.5;
         }
 
-       
+        public void streicheln()
+        {
+            bool streichelnJa;
+            if(futterValue <= 0)
+            {
+                streichelnJa = false;
+            }
+            else
+            {
+                streichelnJa = true;
+            }
+
+            if(streichelnJa == true)
+            {
+                gesundheitValue += 0.035;
+            }
+            else
+            {
+                gesundheitValue += 0;
+            }
+        }
+
+        public void bajoSpielzeug()
+        {
+
+        }
+
+        public virtual void animalSpeak()
+        {
+            MessageBox.Show("Danke fürs Strecheln");
+        }
     }
 }
