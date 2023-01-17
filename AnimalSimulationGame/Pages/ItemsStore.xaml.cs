@@ -17,6 +17,8 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class ItemsStore : Window
     {
+        int futterAnzahl;
+
         public ItemsStore()
         {
             InitializeComponent();
@@ -27,6 +29,11 @@ namespace AnimalSimulationGame
             AnimalsHome animalsHome = new AnimalsHome();
             animalsHome.Show();
             this.Close();
+        }
+
+        private void futterBuy_Click(object sender, RoutedEventArgs e)
+        {
+            labelFutterAnzahl.Content = "" + 1*futterAnzahl;
         }
     }
 }

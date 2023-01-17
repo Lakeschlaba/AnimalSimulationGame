@@ -61,11 +61,6 @@ namespace AnimalSimulationGame
             }
         }
 
-        public void bajoSpielzeug()
-        {
-
-        }
-
         public virtual void animalSpeak()
         {
             MessageBox.Show("Danke fürs Strecheln");
