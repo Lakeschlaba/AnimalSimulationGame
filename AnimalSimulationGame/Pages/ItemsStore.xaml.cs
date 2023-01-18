@@ -20,26 +20,39 @@ namespace AnimalSimulationGame
     public partial class ItemsStore : Window
     {
         public int futterAnzahl;
-        public List<int> futterAnzahlList= new List<int>();
+        public int unitsAnzahl = 800;
         public ItemsStore()
         {
             InitializeComponent();
+            unitsAnzahlLabel.Content = "" + unitsAnzahl.ToString();
+            futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             AnimalsHome animalsHome = new AnimalsHome();
             animalsHome.Show();
-            //this.Close();
+            this.Close();
         }
 
         private void buyFutterBtn_Click(object sender, RoutedEventArgs e)
         {
-            futterAnzahlList.Add(futterAnzahl);
             futterAnzahl += 1;
+            unitsAnzahl -= 50;
+
+            unitsAnzahlLabel.Content = "" + unitsAnzahl.ToString();
             futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
 
-            
+            unitsDepot();
+        }
+
+        public void unitsDepot()
+        {
+            if(unitsAnzahl <= 0)
+            {
+                buyFutterBtn.IsEnabled = false;
+                buySpielzeugBajo.IsEnabled = false;
+            }
         }
 
     }

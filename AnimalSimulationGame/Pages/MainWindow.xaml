@@ -12,7 +12,7 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
         <Canvas HorizontalAlignment="Center" Width="802">
-            <Image Height="246" Canvas.Left="18" Canvas.Top="42" Width="194" Source="/Download.jpg"/>
+            <Image Height="246" Canvas.Left="18" Canvas.Top="42" Width="194"/>
             <Label Content="Lama (Fortnite)" Canvas.Left="43" Canvas.Top="8" FontSize="20"/>
             <Button Name="FutterBtn" IsEnabled="True"  Content="Füttern" Canvas.Left="94" Canvas.Top="304" Click="Button_Click_Fuettern"/>
             <Button Name ="StreichelnBtn" Content="Streicheln" Canvas.Left="87" Canvas.Top="346" Click="Button_Click_Streicheln"/>
@@ -21,7 +21,7 @@
             <Label Content="Gesundheit" Canvas.Left="225" Canvas.Top="68"/>
             <Label Content="Futter" Canvas.Left="225" Canvas.Top="148"/>
             <TextBlock Canvas.Left="715" Canvas.Top="29" Text="Uhrzeit" TextWrapping="Wrap" x:Name="Uhrzeit"/>
-            <Image Height="246" Canvas.Left="345" Canvas.Top="42" Width="194" Source="/Download.jpg"/>
+            <Image Height="246" Canvas.Left="345" Canvas.Top="42" Width="194" />
             <Label Content="Lama (Fortnite)" Canvas.Left="370" Canvas.Top="8" FontSize="20"/>
             <Button x:Name="FutterBtn_Copy" IsEnabled="True"  Content="Füttern" Canvas.Left="421" Canvas.Top="304" Click="Button_Click_Fuettern"/>
             <Button x:Name ="StreichelnBtn_Copy" Content="Streicheln" Canvas.Left="414" Canvas.Top="346" Click="Button_Click_Streicheln"/>

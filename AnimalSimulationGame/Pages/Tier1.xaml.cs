@@ -20,6 +20,7 @@ namespace AnimalSimulationGame
     {
         DispatcherTimer timer = new DispatcherTimer();
         Animals erstesTier = new ErstesTier();
+        Random random = new Random();
         private bool animalNachricht;
         
         public Tier1()
@@ -28,24 +29,20 @@ namespace AnimalSimulationGame
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
-
-            
         }
 
         private void t_Tick(object sender, EventArgs e)
         {
-
             gesundheit1.Value = erstesTier.gesundheitValue;
             futter1.Value = erstesTier.futterValue;
             erstesTier.health();
             erstesTier.futterValue -= 0.05;
-       
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            AnimalsHome animalsHome = new AnimalsHome();
-            animalsHome.Show();
+            AnimalSelection animalSelection = new AnimalSelection();
+            animalSelection.Show();
             this.Close();
         }
 
@@ -56,7 +53,6 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            Random random = new Random();
             animalNachricht = random.Next(2) == 1;
 
             if(animalNachricht == true)

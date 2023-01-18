@@ -9,6 +9,12 @@
         Title="Tier3" Height="500" Width="850">
     <Grid>
         <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
+        
         <Label Content="Tier 3" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+
+        <Label Content="Units: " HorizontalAlignment="Left" Margin="616,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Universal-Futter:" HorizontalAlignment="Left" Margin="616,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

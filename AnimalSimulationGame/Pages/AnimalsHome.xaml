@@ -13,6 +13,11 @@
         <Button Name="AnimalSelection" Content="Animal Selection" HorizontalAlignment="Left" Margin="448,119,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="AnimalSelection_Click"/>
         <Button Name="ItemsStore" Content="Item Store" HorizontalAlignment="Left" Margin="448,190,0,0" VerticalAlignment="Top" Height="44" Width="159" Click="ItemsStore_Click"/>
         <Button Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,293,0,0" VerticalAlignment="Top" Height="44" Width="160" Click="Exit_Click"/>
+
         <Label Content="Animal Home" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label Content="Units: " HorizontalAlignment="Left" Margin="616,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="Universal-Futter:" HorizontalAlignment="Left" Margin="616,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top"/>
+        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

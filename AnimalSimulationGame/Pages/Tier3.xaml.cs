@@ -24,8 +24,8 @@ namespace AnimalSimulationGame
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            AnimalsHome animalsHome = new AnimalsHome();
-            animalsHome.Show();
+            AnimalSelection animalSelection = new AnimalSelection();
+            animalSelection.Show();
             this.Close();
         }
     }

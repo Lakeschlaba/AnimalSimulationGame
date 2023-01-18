@@ -64,7 +64,6 @@ namespace AnimalSimulationGame
 
         public void animalSpeak()
         {
-       
             MessageBox.Show("Ein Animal bedankt sich");
         }
     }
