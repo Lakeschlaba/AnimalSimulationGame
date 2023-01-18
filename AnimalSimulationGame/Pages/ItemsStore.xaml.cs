@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Reflection.Emit;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,13 +20,14 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class ItemsStore : Window
     {
-        public int futterAnzahl;
-        public int unitsAnzahl = 800;
+        public static int unitsAnzahl = 800;
+        public static int futterAnzahl;
+
         public ItemsStore()
         {
             InitializeComponent();
-            unitsAnzahlLabel.Content = "" + unitsAnzahl.ToString();
-            futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
+            unitsAnzahlLabel.Content = unitsAnzahl.ToString();
+            futterAnzahlLabel.Content = futterAnzahl.ToString();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -48,12 +50,29 @@ namespace AnimalSimulationGame
 
         public void unitsDepot()
         {
-            if(unitsAnzahl <= 0)
+            if(unitsAnzahl < 50)
             {
                 buyFutterBtn.IsEnabled = false;
+            }
+
+            if(unitsAnzahl < 200)
+            {
                 buySpielzeugBajo.IsEnabled = false;
             }
         }
 
+        public int UnitsAnzahl
+        {
+            get { return unitsAnzahl; }
+            set { unitsAnzahl = value; }
+        }
+
+        public int FutterAnzahl
+        {
+            get { return futterAnzahl; }
+            set { futterAnzahl = value; }
+        }
+
     }
+
 }

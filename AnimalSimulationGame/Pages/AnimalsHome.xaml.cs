@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static AnimalSimulationGame.MainWindow;
 
 namespace AnimalSimulationGame
 {
@@ -18,10 +19,19 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class AnimalsHome : Window
     {
-
+        DispatcherTimer timer = new DispatcherTimer();
+        ItemsStore unitsFutter = new ItemsStore();
         public AnimalsHome()
         {
             InitializeComponent();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += t_Tick;
+            timer.Start();
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            unitsFutterValues();
         }
 
         private void AnimalStoreBtn_Click(object sender, RoutedEventArgs e)
@@ -55,6 +65,15 @@ namespace AnimalSimulationGame
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        public void unitsFutterValues()
+        {
+            int futterAnzahl = unitsFutter.FutterAnzahl;
+            int unitsAnzahl = unitsFutter.UnitsAnzahl;
+
+            futterAnzahlLabel.Content = futterAnzahl;
+            unitsAnzahlLabel.Content = unitsAnzahl;
         }
 
     }

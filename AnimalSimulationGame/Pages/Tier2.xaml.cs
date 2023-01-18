@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace AnimalSimulationGame
 {
@@ -17,15 +18,36 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class Tier2 : Window
     {
+        DispatcherTimer timer = new DispatcherTimer();
+        ItemsStore unitsFutter = new ItemsStore();
         public Tier2()
         {
             InitializeComponent();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += t_Tick;
+            timer.Start();
         }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            unitsFutterValues();
+        }
+
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             AnimalSelection animalSelection = new AnimalSelection();
             animalSelection.Show();
             this.Close();
         }
+
+        public void unitsFutterValues()
+        {
+            int futterAnzahl = unitsFutter.FutterAnzahl;
+            int unitsAnzahl = unitsFutter.UnitsAnzahl;
+
+            futterAnzahlLabel.Content = futterAnzahl;
+            unitsAnzahlLabel.Content = unitsAnzahl;
+        }
+
     }
 }
