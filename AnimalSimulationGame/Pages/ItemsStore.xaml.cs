@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace AnimalSimulationGame
 {
@@ -20,14 +21,24 @@ namespace AnimalSimulationGame
     /// </summary>
     public partial class ItemsStore : Window
     {
-        public static int unitsAnzahl = 800;
-        public static int futterAnzahl;
+        DispatcherTimer timer = new DispatcherTimer();
+
+        public static int unitsAnzahl = 80000;
+        public static int futterAnzahl = 5;
 
         public ItemsStore()
         {
             InitializeComponent();
             unitsAnzahlLabel.Content = unitsAnzahl.ToString();
             futterAnzahlLabel.Content = futterAnzahl.ToString();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Tick += t_Tick;
+            timer.Start();
+        }
+
+        private void t_Tick(object sender, EventArgs e)
+        {
+            unitsDepot();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -41,11 +52,15 @@ namespace AnimalSimulationGame
         {
             futterAnzahl += 1;
             unitsAnzahl -= 50;
-
             unitsAnzahlLabel.Content = "" + unitsAnzahl.ToString();
             futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
+        }
 
-            unitsDepot();
+        private void buySpielzeugBajo_Click(object sender, RoutedEventArgs e)
+        {
+            unitsAnzahl -= 200;
+            unitsAnzahlLabel.Content = "" + unitsAnzahl.ToString();
+            futterAnzahlLabel.Content = "" + futterAnzahl.ToString();
         }
 
         public void unitsDepot()

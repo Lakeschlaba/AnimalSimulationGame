@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static AnimalSimulationGame.ItemsStore;
+using static AnimalSimulationGame.AnimalStore;
 
 namespace AnimalSimulationGame
 {
@@ -25,7 +26,7 @@ namespace AnimalSimulationGame
         AnimalStore animals = new AnimalStore();
         Random random = new Random();
         private bool animalNachricht;
-       
+
         public Tier1()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace AnimalSimulationGame
         {
             gesundheit1.Value = erstesTier.gesundheitValue;
             futter1.Value = erstesTier.futterValue;
+            
             erstesTier.health();
             erstesTier.futterValue -= 0.05;
             gehegeTooTier1();
@@ -55,6 +57,11 @@ namespace AnimalSimulationGame
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
             erstesTier.eat();
+
+            if(futterAnzahl == 0)
+            {
+                feedBtn1.IsEnabled= false;
+            }
         }
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
@@ -116,35 +123,40 @@ namespace AnimalSimulationGame
             var uriBajoBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Bajo.jpg");
             var bitmapBajoBuy = new BitmapImage(uriBajoBuy);
 
-            if (dodoBuy == true)
+            if(animalBuyCounter== 1)
             {
-                tier1TierImage.Source = bitmapDodoBuy;
+                if (dodoBuy == true)
+                {
+                    tier1TierImage.Source = bitmapDodoBuy;
+                }
+
+                if (wombatBuy == true)
+                {
+                    tier1TierImage.Source = bitmapWombatBuy;
+                }
+
+                if (opossumBuy == true)
+                {
+                    tier1TierImage.Source = bitmapOpossumBuy;
+                }
+
+                if (kugelfischBuy == true)
+                {
+                    tier1TierImage.Source = bitmapKugelfischBuy;
+                }
+
+                if (megalodonBuy == true)
+                {
+                    tier1TierImage.Source = bitmapMegalodonBuy;
+                }
+
+                if (bajoBuy == true)
+                {
+                    tier1TierImage.Source = bitmapBajoBuy;
+                }
             }
 
-            if (wombatBuy == true)
-            {
-                tier1TierImage.Source = bitmapWombatBuy;
-            }
-
-            if (opossumBuy == true)
-            {
-                tier1TierImage.Source = bitmapOpossumBuy;
-            }
-
-            if (kugelfischBuy == true)
-            {
-                tier1TierImage.Source = bitmapKugelfischBuy;
-            }
-
-            if (megalodonBuy == true)
-            {
-                tier1TierImage.Source = bitmapMegalodonBuy;
-            }
-
-            if (bajoBuy == true)
-            {
-                tier1TierImage.Source = bitmapBajoBuy;
-            }
+           
         }
 
         public void unitsFutterValues()

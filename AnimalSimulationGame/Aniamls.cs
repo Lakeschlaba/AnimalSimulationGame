@@ -13,16 +13,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static AnimalSimulationGame.ItemsStore;
 
 namespace AnimalSimulationGame
 {
     public partial class Animals : Window
     {
-
         public double gesundheitValue = 50;
-        public double futterValue = 10;
-
-  
+        public double futterValue = 0;
+       
         public void health()
         {
             if (futterValue <= 0)
@@ -33,11 +32,38 @@ namespace AnimalSimulationGame
             {
                 gesundheitValue += 0.055;
             }
+
+            if(gesundheitValue <= 0)
+            {
+
+            }
+        }
+
+        public void gameOver()
+        {
+            MessageBox.Show("TIERQUÄLER! Dein Tier ist verstorben, dass Spiel ist vorbei");
+            AnimalsHome animalsHome = new AnimalsHome();
+            animalsHome.Show();
+            this.Close();
         }
 
         public void eat()
         {
-            futterValue += 0.5;
+            if (futterAnzahl > 0) 
+            {
+                futterValue += 0.5;
+                futterAnzahl -= 1;
+            }
+            else
+            {
+                futterAnzahl= 0;
+                futterValue += 0;
+            }
+
+            if (futterValue <= 0)
+            {
+                futterValue += 0;
+            }
         }
 
         public void streicheln()
