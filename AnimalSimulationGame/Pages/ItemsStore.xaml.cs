@@ -55,6 +55,7 @@ namespace AnimalSimulationGame
 
         private void buySpielzeugBajo_Click(object sender, RoutedEventArgs e)
         {
+            GameManager.dogToy += 1;
             GameManager.units -= 200;
         }
 

@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AnimalSimulationGame.AnimalObjects.DrittesTier" Collapsed="true">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AnimalObjects\DrittesTier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalObjects.ErstesTier" Collapsed="true">
+    <Position X="12.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AnimalObjects\ErstesTier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimalSimulationGame.Animals" Collapsed="true">
+    <Position X="15.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAIAAAAAAAAAAAAgAAAAAAAAQAQBAAAAAAg=</HashCode>
+      <FileName>Aniamls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalObjects.ZweitesTier" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AnimalObjects\ZweitesTier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalObjects.ViertesTier" Collapsed="true">
+    <Position X="18.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>AnimalObjects\ViertesTier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalSelection" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAEMAAAAAAAAAAAASAAAIAAAACAIAAAAAAIAAAA=</HashCode>
+      <FileName>Pages\AnimalSelection.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalsHome" Collapsed="true">
+    <Position X="6" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARAAAAAAAAAAAAAAAAAAAAA4AAEBCAAAAACAAAAAAA=</HashCode>
+      <FileName>Pages\AnimalsHome.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalsMenu" Collapsed="true">
+    <Position X="6" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AnimalsMenu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.AnimalStore" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQEAAAIQAAAAAAAAAAAQAAAMAAAByAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\AnimalStore.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.BarnStore" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAREAAAIAAAAAAAAAAAAAEAAAAAAACQAAAAAAAAAAAA=</HashCode>
+      <FileName>Pages\BarnStore.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.ItemsStore" Collapsed="true">
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAIAAAAAAAAAAAAAAAAIAAAACAAAAAAICAAAAA=</HashCode>
+      <FileName>Pages\ItemsStore.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.Tier1" Collapsed="true">
+    <Position X="12.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAIAgIAAAAAAAAAAAAAAAIAICAAACAAAAAAAIA=</HashCode>
+      <FileName>Pages\Tier1.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.Tier2" Collapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAIAgIAAAAAAAAAAAAAAAABICAAACAAAAAAAAA=</HashCode>
+      <FileName>Pages\Tier2.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.Tier3" Collapsed="true">
+    <Position X="16.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAUAAAAIAgIAAAAAAgAAAAAAAAAAICAAACQAAAAAAAA=</HashCode>
+      <FileName>Pages\Tier3.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.Tier4" Collapsed="true">
+    <Position X="18.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAAAAIAgIAAAAAAgAAAAAgAAAAICAAACQAAAAAAAA=</HashCode>
+      <FileName>Pages\Tier4.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

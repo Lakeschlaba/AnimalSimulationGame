@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
+        xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="AnimalsMenu" Height="450" Width="800">
@@ -12,7 +13,9 @@
             <Button Name="StartBtn" Content="Start" Canvas.Left="340" Canvas.Top="154" Height="32" Width="120" Click="StartBtn_Click"/>
             <Button Name="ExitBtn" Content="Exit" Canvas.Left="340" Canvas.Top="237" Height="34" Width="120" Click="ExitBtn_Click"/>
             <Label Content="Animal Simulation Game" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Canvas.Left="278" Canvas.Top="64" VerticalAlignment="Top"/>
+            
         </Canvas>
+        <Image HorizontalAlignment="Left" Height="100" Margin="552,254,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

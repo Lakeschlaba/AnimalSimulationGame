@@ -16,6 +16,7 @@ using static AnimalSimulationGame.utils.GameManager;
 using static AnimalSimulationGame.BarnStore;
 using System.IO;
 using AnimalSimulationGame.utils;
+using AnimalSimulationGame.AnimalObjects;
 
 namespace AnimalSimulationGame
 {
@@ -25,49 +26,56 @@ namespace AnimalSimulationGame
     public partial class Tier1 : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        Animals erstesTier = new ErstesTier();
- 
-        Random random = new Random();
-        private bool animalNachricht;
+        DispatcherTimer timerForRent = new DispatcherTimer();
 
+        Animals erstesTier = new ErstesTier();
 
         public Tier1()
         {
             InitializeComponent();
             initLabels();
-            timer.Interval = TimeSpan.FromMilliseconds(100);
+            timer.Interval = TimeSpan.FromMilliseconds(1000);
             timer.Tick += t_Tick;
             timer.Start();
+
+            timerForRent.Interval = TimeSpan.FromMinutes(2);
+            timerForRent.Tick += t_Tick2;
+            timerForRent.Start();
         }
 
         private void t_Tick(object sender, EventArgs e)
         {
-            //gesundheit1.Value = viertesTier.gesundheitValue;
-            //futter1.Value = viertesTier.futterValue;
 
-            gesundheit1.Value = GameManager.gesundheitValueM;
-            futter1.Value = GameManager.futterValueM;
+            gesundheit1.Value = GameManager.healthAnimal1;
+            futter1.Value = GameManager.foodAnimal1;
 
             erstesTier.health();
             erstesTier.hunger();
+
             initLabels();
+            checkStreicheln();
             loadBarnPic();
             loadAnimalPic();
         }
 
+        private void t_Tick2(object sender, EventArgs e)
+        {
+            erstesTier.rent();
+        }
+
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            AnimalSelection animalSelection = new AnimalSelection();
-            animalSelection.Show();
+            AnimalSelection animalSelectionWindow = new AnimalSelection();
+            animalSelectionWindow.Show();
             this.Close();
         }
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
-     
+            GameManager.isFedAnimal1 = true;
             erstesTier.eat();
-
-            if(GameManager.foodAmount == 0)
+            GameManager.isFedAnimal1 = false;
+            if (GameManager.foodAmount == 0)
             {
                 feedBtn1.IsEnabled= false;
             }
@@ -75,14 +83,20 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            animalNachricht = random.Next(5) == 1;
-
-            if(animalNachricht == true)
-            {
-                erstesTier.animalSpeak();
-            }
-
             erstesTier.streicheln();
+            erstesTier.hundespielzeug();
+        }
+
+        private void checkStreicheln()
+        {
+            if(GameManager.wantsStroked == false)
+            {
+                streichelnBtn1.IsEnabled= false;
+            }
+            else if (GameManager.wantsStroked == true)
+            {
+                streichelnBtn1.IsEnabled= true;
+            }
         }
 
         private void initLabels()
@@ -106,6 +120,8 @@ namespace AnimalSimulationGame
                     gehegeImage.Source = bitmapWasserGehege;
                     break;
             }
+
+
         }
 
         private void loadAnimalPic()
@@ -153,6 +169,7 @@ namespace AnimalSimulationGame
                     tierImage.Source = bajoBitmap;
                     erstesTier.animalName = "Bajo";
                     animalNameLabel.Content = erstesTier.animalName;
+                    GameManager.wantsDogToy = true;
                     break;
             }
         }

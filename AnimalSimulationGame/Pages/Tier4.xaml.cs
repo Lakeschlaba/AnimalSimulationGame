@@ -10,13 +10,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using static AnimalSimulationGame.MainWindow;
 using static System.Net.Mime.MediaTypeNames;
 using static AnimalSimulationGame.AnimalStore;
 using static AnimalSimulationGame.BarnStore;
 using static AnimalSimulationGame.ItemsStore;
 using System.IO;
 using AnimalSimulationGame.utils;
+using AnimalSimulationGame.AnimalObjects;
+using ViertesTier = AnimalSimulationGame.AnimalObjects.ViertesTier;
 
 namespace AnimalSimulationGame
 {
@@ -26,6 +27,7 @@ namespace AnimalSimulationGame
     public partial class Tier4 : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
+        DispatcherTimer timerForRent = new DispatcherTimer();
         Animals viertesTier = new ViertesTier();
 
         Random random = new Random();
@@ -41,18 +43,26 @@ namespace AnimalSimulationGame
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
+
+            timerForRent.Interval = TimeSpan.FromMinutes(1);
+            timerForRent.Tick += t_Tick2;
+            timerForRent.Start();
         }
 
-        private void t_Tick(object sender, EventArgs e)
+        private void t_Tick2(object sender, EventArgs e)
         {
-            //gesundheit1.Value = viertesTier.gesundheitValue;
-            //futter1.Value = viertesTier.futterValue;
+            viertesTier.rent();
+        }
 
-            gesundheit1.Value = GameManager.gesundheitValueM2;
-            futter1.Value = GameManager.futterValueM2;
+        private void t_Tick(object sender, EventArgs e) 
+        {
+
+            gesundheit1.Value = GameManager.healthAnimal4;
+            futter1.Value = GameManager.foodAnimal4;
 
             viertesTier.health();
             viertesTier.hunger();
+
             initLabels();
             loadBarnPic();
             loadAnimalPic();
@@ -60,15 +70,16 @@ namespace AnimalSimulationGame
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            AnimalSelection animalSelection = new AnimalSelection();
-            animalSelection.Show();
+            AnimalSelection animalSelectionWindow = new AnimalSelection();
+            animalSelectionWindow.Show();
             this.Close();
         }
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
+            GameManager.isFedAnimal4 = true;
             viertesTier.eat();
-
+            GameManager.isFedAnimal4 = false;
             if (GameManager.foodAmount == 0)
             {
                 feedBtn1.IsEnabled = false;
@@ -77,13 +88,8 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            animalNachricht = random.Next(2) == 1;
-
-            if (animalNachricht == true)
-            {
-                viertesTier.animalSpeak();
-            }
             viertesTier.streicheln();
+            viertesTier.hundespielzeug();
         }
 
         private void initLabels()
@@ -155,6 +161,7 @@ namespace AnimalSimulationGame
                     tierImage.Source = bajoBitmap;
                     viertesTier.animalName = "Bajo";
                     animalNameLabel.Content = viertesTier.animalName;
+                    GameManager.wantsDogToy = true;
                     break;  
             }
 

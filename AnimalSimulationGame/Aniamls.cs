@@ -15,90 +15,199 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static AnimalSimulationGame.ItemsStore;
-using static AnimalSimulationGame.MainWindow;
 
 namespace AnimalSimulationGame
 {
     public class Animals 
     {
-        public double gesundheitValue = 50;
-        public double futterValue = 50;
         public String animalName = "";
 
-        Random randomHunger = new Random();
-        private bool animalHunger;
+        Random random = new Random();
+
+        public virtual void animalSpeak()
+        {
+            MessageBox.Show("Irgendein Tier bedankt sich bei dir für's streicheln");
+        }
+
+        public virtual void rent()
+        {
+            GameManager.units += 500;
+        }
+
+        public void hundespielzeug()
+        {
+            GameManager.randomChoose = random.Next(5) == 1;
+
+            if (GameManager.randomChoose == true)
+            {
+                if (GameManager.wantsDogToy == true)
+                {
+                    if (GameManager.dogToy > 0)
+                    {
+                        GameManager.dogToy -= 1;
+                        GameManager.randomBajoReward = random.Next(50, 1000);
+                        GameManager.units += GameManager.randomBajoReward;
+                        MessageBox.Show("Bajo hat das Spielzeug geschnappt! und spendet dir " + GameManager.randomBajoReward + "$");
+                    }
+                }
+            }
+        }
 
         public void health()
         {
-            if (futterValue <= 0)
+            //Tier1
+            if (GameManager.foodAnimal1 > 0)
             {
-                gesundheitValue -= 0.155;
+                GameManager.healthAnimal1 += 0.15;
             }
-            else
+            else if(GameManager.foodAnimal1 <= 0)
             {
-                gesundheitValue += 0.55;
+                GameManager.healthAnimal1 -= 0.15;
             }
 
+            //Tier2
+            if (GameManager.foodAnimal2 > 0)
+            {
+                GameManager.healthAnimal2 += 0.15;
+            }
+            else if (GameManager.foodAnimal2 <= 0)
+            {
+                GameManager.healthAnimal2 -= 0.15;
+            }
+
+            //Tier3
+            if (GameManager.foodAnimal3 > 0)
+            {
+                GameManager.healthAnimal3 += 0.15;
+            }
+            else if (GameManager.foodAnimal3 <= 0)
+            {
+                GameManager.healthAnimal3 -= 0.15;
+            }
+
+                //Tier4
+            if (GameManager.foodAnimal4 > 0)
+            {
+                GameManager.healthAnimal4 += 0.15;
+            }
+            else if (GameManager.foodAnimal4 <= 0)
+            {
+                GameManager.healthAnimal4 -= 0.15;
+            }
         }
 
         public void eat()
         {
-            if (GameManager.foodAmount > 0) 
+            GameManager.foodAmount -= 1;
+
+            //Tier1
+            if(GameManager.isFedAnimal1 == true)
             {
-                futterValue += 5;
-                GameManager.foodAmount -= 1;
-            }
-            else
-            {
-                GameManager.foodAmount = 0;
-                futterValue += 0;
+                GameManager.foodAnimal1 += 1.5;
             }
 
-            if (futterValue <= 0)
+            //Tier2
+            if (GameManager.isFedAnimal2 == true)
             {
-                futterValue += 0;
+                GameManager.foodAnimal2 += 1.5;
             }
-            
+
+            //Tier3
+            if (GameManager.isFedAnimal3 == true)
+            {
+                GameManager.foodAnimal3 += 1.5;
+            }
+
+            //Tier4
+            if (GameManager.isFedAnimal4 == true)
+            {
+                GameManager.foodAnimal4 += 1.5;
+            }
         }
 
         public void hunger()
         {
-            animalHunger = randomHunger.Next(10) == 1;
-            if (animalHunger == false)
+            GameManager.randomChoose = random.Next(10) == 1;
+
+            if (GameManager.randomChoose == true)
             {
-                futterValue -= 0;
-            }
-            else
-            {
-                futterValue -= 0.5;
-            }
+                //Tier1
+                if(GameManager.foodAnimal1 > 0)
+                {
+                    GameManager.foodAnimal1 -= 0.025;
+                }
+
+                //Tier2
+                if (GameManager.foodAnimal2 > 0)
+                {
+                    GameManager.foodAnimal2 -= 0.025;
+                }
+
+                //Tier3
+                if (GameManager.foodAnimal3 > 0)
+                {
+                    GameManager.foodAnimal3 -= 0.025;
+                }
+
+                //Tier4
+                if (GameManager.foodAnimal4 > 0)
+                {
+                    GameManager.foodAnimal4 -= 0.025;
+                }
+            }   
         }
 
         public void streicheln()
         {
-            bool streichelnJa;
-            if(futterValue <= 0)
+            GameManager.randomChoose = random.Next(5) == 1;
+
+            //Tier1
+            if (GameManager.foodAnimal1 <= 0)
             {
-                streichelnJa = false;
+                GameManager.wantsStroked = false;
             }
-            else
+            else if (GameManager.foodAnimal1 > 0)
             {
-                streichelnJa = true;
+                GameManager.wantsStroked = true;
             }
 
-            if(streichelnJa == true)
+            //Tier2
+            if (GameManager.foodAnimal2 <= 0)
             {
-                gesundheitValue += 0.035;
+                GameManager.wantsStroked = false;
             }
-            else
+            else if (GameManager.foodAnimal2 > 0)
             {
-                gesundheitValue += 0;
+                GameManager.wantsStroked = true;
             }
-        }
 
-        public virtual void animalSpeak()
-        {
-           MessageBox.Show("Animal bedankt sich bei dir fürs streicheln :>");
+            //Tier3
+            if (GameManager.foodAnimal3 <= 0)
+            {
+                GameManager.wantsStroked = false;
+            }
+            else if (GameManager.foodAnimal3 > 0)
+            {
+                GameManager.wantsStroked = true;
+            }
+
+            //Tier4
+            if (GameManager.foodAnimal4 <= 0)
+            {
+                GameManager.wantsStroked = false;
+            }
+            else if (GameManager.foodAnimal4 > 0)
+            {
+                GameManager.wantsStroked = true;
+            }
+
+            if (GameManager.randomChoose == true)
+            {
+                if (GameManager.wantsStroked)
+                {
+                    animalSpeak();
+                }
+            }
         }
     }
 }

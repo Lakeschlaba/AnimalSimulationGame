@@ -11,21 +11,25 @@ namespace AnimalSimulationGame.utils
         public static ArrayList animalsContainer = new ArrayList();
         public static ArrayList barnsContainer = new ArrayList();
 
+      
+
         public static int units = 90000;
         public static int foodAmount = 500;
+        public static int dogToy = 0;
+        public static int randomBajoReward;
         public static int hunger;
 
-        public static double gesundheitValueM = 50;
-        public static double futterValueM = 50;
+        public static double healthAnimal1 = 50;
+        public static double foodAnimal1 = 0;
 
-        public static double gesundheitValueM2 = 50;
-        public static double futterValueM2 = 50;
+        public static double healthAnimal2 = 50;
+        public static double foodAnimal2 = 10;
 
-        public static double gesundheitValue3 = 50;
-        public static double futterValue3 = 0;
+        public static double healthAnimal3 = 50;
+        public static double foodAnimal3 = 10;
 
-        public static double gesundheitValue4 = 50;
-        public static double futterValue4 = 0;
+        public static double healthAnimal4 = 50;
+        public static double foodAnimal4 = 10;
 
         public static bool isDodoBuyed;
         public static bool isWombatBuyed;
@@ -37,5 +41,14 @@ namespace AnimalSimulationGame.utils
         public static bool isWasserGehegeBuyed;
         public static bool isWiesenGehegeBuyed;
 
+        public static bool wantsStroked;
+        public static bool wantsDogToy;
+
+        public static bool randomChoose;
+
+        public static bool isFedAnimal1;
+        public static bool isFedAnimal2;
+        public static bool isFedAnimal3;
+        public static bool isFedAnimal4;
     }
 }
