@@ -36,13 +36,13 @@
         <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green"/>
         <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown"/>
 
-        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click" Cursor="Hand"/>
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click" Cursor="Hand" />
         
-        <Image HorizontalAlignment="Left" Height="150" Margin="52,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Dodo.jpg"/>
-        <Image HorizontalAlignment="Center" Height="150" Margin="0,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Wombat.jpg"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="542,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Opossum.jpg"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="26,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Kugelfisch.jpg"/>
-        <Image HorizontalAlignment="Center" Height="150" Margin="0,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Megalodon.jpg"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="583,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Bajo.jpg"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="52,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Dodo.jpg" />
+        <Image HorizontalAlignment="Center" Height="150" Margin="0,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Wombat.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="542,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Opossum.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="26,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Kugelfisch.jpg" />
+        <Image HorizontalAlignment="Center" Height="150" Margin="0,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Megalodon.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="583,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Bajo.jpg" />
     </Grid>
 </Window>

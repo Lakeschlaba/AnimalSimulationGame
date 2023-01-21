@@ -7,7 +7,7 @@ namespace AnimalSimulationGame
 {
     class ViertesTier : Animals
     {
-        public void animalSpeak()
+        public override void animalSpeak()
         {
             MessageBox.Show("Das vierte Tier bedankt sich bei Dir");
         }

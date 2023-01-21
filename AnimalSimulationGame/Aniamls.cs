@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimalSimulationGame.utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,55 +15,62 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using static AnimalSimulationGame.ItemsStore;
+using static AnimalSimulationGame.MainWindow;
 
 namespace AnimalSimulationGame
 {
-    public partial class Animals : Window
+    public class Animals 
     {
         public double gesundheitValue = 50;
-        public double futterValue = 0;
-       
+        public double futterValue = 50;
+        public String animalName = "";
+
+        Random randomHunger = new Random();
+        private bool animalHunger;
+
         public void health()
         {
             if (futterValue <= 0)
             {
-                gesundheitValue -= 0.055;
+                gesundheitValue -= 0.155;
             }
             else
             {
-                gesundheitValue += 0.055;
+                gesundheitValue += 0.55;
             }
 
-            if(gesundheitValue <= 0)
-            {
-
-            }
-        }
-
-        public void gameOver()
-        {
-            MessageBox.Show("TIERQUÄLER! Dein Tier ist verstorben, dass Spiel ist vorbei");
-            AnimalsHome animalsHome = new AnimalsHome();
-            animalsHome.Show();
-            this.Close();
         }
 
         public void eat()
         {
-            if (futterAnzahl > 0) 
+            if (GameManager.foodAmount > 0) 
             {
-                futterValue += 0.5;
-                futterAnzahl -= 1;
+                futterValue += 5;
+                GameManager.foodAmount -= 1;
             }
             else
             {
-                futterAnzahl= 0;
+                GameManager.foodAmount = 0;
                 futterValue += 0;
             }
 
             if (futterValue <= 0)
             {
                 futterValue += 0;
+            }
+            
+        }
+
+        public void hunger()
+        {
+            animalHunger = randomHunger.Next(10) == 1;
+            if (animalHunger == false)
+            {
+                futterValue -= 0;
+            }
+            else
+            {
+                futterValue -= 0.5;
             }
         }
 
@@ -88,9 +96,9 @@ namespace AnimalSimulationGame
             }
         }
 
-        public void animalSpeak()
+        public virtual void animalSpeak()
         {
-            MessageBox.Show("Ein Animal bedankt sich");
+           MessageBox.Show("Animal bedankt sich bei dir fürs streicheln :>");
         }
     }
 }

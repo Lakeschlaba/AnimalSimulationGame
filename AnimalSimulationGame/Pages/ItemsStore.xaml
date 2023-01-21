@@ -13,16 +13,16 @@
         <Label Content="Item Store" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
 
         <Button Name="buyFutterBtn" Content="Buy" HorizontalAlignment="Left" Margin="150,355,0,0" VerticalAlignment="Top" Width="172" Height="41" Click="buyFutterBtn_Click" IsEnabled="True"/>
-        <Button Name="buySpielzeugBajo" Content="Buy" HorizontalAlignment="Left" Margin="500,355,0,0" VerticalAlignment="Top" Width="171" Height="41"  IsEnabled="True" Click="buySpielzeugBajo_Click"/>
+        <Button Name="buySpielzeugBajo" Content="Buy" HorizontalAlignment="Left" Margin="502,355,0,0" VerticalAlignment="Top" Width="171" Height="41"  IsEnabled="True" Click="buySpielzeugBajo_Click"/>
 
         <Label Content="Universal Futter" HorizontalAlignment="Left" Margin="172,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="hundespielzeugBuyBtn" Content="Hundespielzeug" HorizontalAlignment="Left" Margin="522,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+
+        <Image HorizontalAlignment="Left" Height="150" Margin="162,156,0,0" VerticalAlignment="Top" Width="150" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\futter.png"/>
+        <Image HorizontalAlignment="Left" Height="150" Margin="512,156,0,0" VerticalAlignment="Top" Width="150" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\bajoSpielzeug.png"/>
         
-        <Image HorizontalAlignment="Left" Height="150" Margin="162,156,0,0" VerticalAlignment="Top" Width="150"/>
-        <Image HorizontalAlignment="Left" Height="150" Margin="512,156,0,0" VerticalAlignment="Top" Width="150"/>
-        
-        <Label Content="Price: 50$ pro Portion" HorizontalAlignment="Left" Margin="174,313,0,0" VerticalAlignment="Top"/>
-        <Label Content="Price: 200$" HorizontalAlignment="Left" Margin="554,313,0,0" VerticalAlignment="Top"/>
+        <Label Content="50$" HorizontalAlignment="Left" Margin="221,313,0,0" VerticalAlignment="Top"/>
+        <Label Content="200$" HorizontalAlignment="Left" Margin="569,313,0,0" VerticalAlignment="Top"/>
 
         <Label Content="Units: " HorizontalAlignment="Left" Margin="616,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label Content="Universal-Futter:" HorizontalAlignment="Left" Margin="616,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>

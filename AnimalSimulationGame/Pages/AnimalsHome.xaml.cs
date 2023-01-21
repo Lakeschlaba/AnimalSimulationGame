@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AnimalSimulationGame.utils;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -64,17 +65,13 @@ namespace AnimalSimulationGame
 
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         public void unitsFutterValues()
         {
-            int futterAnzahl = unitsFutter.FutterAnzahl;
-            int unitsAnzahl = unitsFutter.UnitsAnzahl;
-
-            futterAnzahlLabel.Content = futterAnzahl;
-            unitsAnzahlLabel.Content = unitsAnzahl;
+            futterAnzahlLabel.Content = GameManager.foodAmount;
+            unitsAnzahlLabel.Content = GameManager.units;
         }
-
     }
 }

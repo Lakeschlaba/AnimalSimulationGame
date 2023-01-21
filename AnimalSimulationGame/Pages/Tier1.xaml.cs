@@ -12,6 +12,10 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using static AnimalSimulationGame.ItemsStore;
 using static AnimalSimulationGame.AnimalStore;
+using static AnimalSimulationGame.utils.GameManager;
+using static AnimalSimulationGame.BarnStore;
+using System.IO;
+using AnimalSimulationGame.utils;
 
 namespace AnimalSimulationGame
 {
@@ -22,14 +26,15 @@ namespace AnimalSimulationGame
     {
         DispatcherTimer timer = new DispatcherTimer();
         Animals erstesTier = new ErstesTier();
-        BarnStore images = new BarnStore();
-        AnimalStore animals = new AnimalStore();
+ 
         Random random = new Random();
         private bool animalNachricht;
+
 
         public Tier1()
         {
             InitializeComponent();
+            initLabels();
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
@@ -37,14 +42,17 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            gesundheit1.Value = erstesTier.gesundheitValue;
-            futter1.Value = erstesTier.futterValue;
-            
+            //gesundheit1.Value = viertesTier.gesundheitValue;
+            //futter1.Value = viertesTier.futterValue;
+
+            gesundheit1.Value = GameManager.gesundheitValueM;
+            futter1.Value = GameManager.futterValueM;
+
             erstesTier.health();
-            erstesTier.futterValue -= 0.05;
-            gehegeTooTier1();
-            animalTooTier1();
-            unitsFutterValues();
+            erstesTier.hunger();
+            initLabels();
+            loadBarnPic();
+            loadAnimalPic();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -56,9 +64,10 @@ namespace AnimalSimulationGame
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
+     
             erstesTier.eat();
 
-            if(futterAnzahl == 0)
+            if(GameManager.foodAmount == 0)
             {
                 feedBtn1.IsEnabled= false;
             }
@@ -66,103 +75,86 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            animalNachricht = random.Next(2) == 1;
+            animalNachricht = random.Next(5) == 1;
 
             if(animalNachricht == true)
             {
                 erstesTier.animalSpeak();
             }
+
             erstesTier.streicheln();
         }
 
-        public void gehegeTooTier1()
+        private void initLabels()
         {
-            bool wiesenGehgeBuy = images.WiesenGehegeBuy;
-            var uriWiesenGehege1 = new Uri("C:/Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//wiesenGehege.png");
-            var bitmapWiesenGehege1 = new BitmapImage(uriWiesenGehege1);
-
-            bool wasserGehegeBuy = images.WasserGehegeBuy;
-            var uriWasserGehege1 = new Uri("C:/Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//wasserGehege.png");
-            var bitmapWasserGehege1 = new BitmapImage(uriWasserGehege1);
-
-            if (wiesenGehgeBuy == true)
-            {
-                tier1GehegeImage.Source = bitmapWiesenGehege1;
-            }
-
-            if(wasserGehegeBuy == true)
-            {
-                tier1GehegeImage.Source = bitmapWasserGehege1;
-            }
-          
+            futterAnzahlLabel.Content = GameManager.foodAmount;
+            unitsAnzahlLabel.Content = GameManager.units;
         }
 
-        public void animalTooTier1()
+        private void loadBarnPic()
         {
-            bool dodoBuy = animals.DodoBuy;
-            var uriDodoBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Dodo.jpg");
-            var bitmapDodoBuy = new BitmapImage(uriDodoBuy);
+            var bitmapWiesenGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wiesenGehege.png", UriKind.Relative)));
 
-            bool wombatBuy = animals.WombatBuy;
-            var uriWombatBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Wombat.jpg");
-            var bitmapWombatBuy = new BitmapImage(uriWombatBuy);
+            var bitmapWasserGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wasserGehege.png", UriKind.Relative)));
 
-            bool opossumBuy = animals.OpossumBuy;
-            var uriOpossumBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Opossum.jpg");
-            var bitmapOpossumBuy = new BitmapImage(uriOpossumBuy);
-
-            bool kugelfischBuy = animals.KugelfischBuy;
-            var uriKugelfischBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Kugelfisch.jpg");
-            var bitmapKugelfischBuy = new BitmapImage(uriKugelfischBuy);
-
-            bool megalodonBuy = animals.MegalodonBuy;
-            var uriMegalodonBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Megalodon.jpg");
-            var bitmapMegalodonBuy = new BitmapImage(uriMegalodonBuy);
-
-            bool bajoBuy = animals.BajoBuy;
-            var uriBajoBuy = new Uri("C://Users//gereo//Documents//ProgrammeC#//AnimalSimulationGame//AnimalSimulationGame//Images//Bajo.jpg");
-            var bitmapBajoBuy = new BitmapImage(uriBajoBuy);
-
-            if(animalBuyCounter== 1)
+            switch (GameManager.barnsContainer[0])
             {
-                if (dodoBuy == true)
-                {
-                    tier1TierImage.Source = bitmapDodoBuy;
-                }
-
-                if (wombatBuy == true)
-                {
-                    tier1TierImage.Source = bitmapWombatBuy;
-                }
-
-                if (opossumBuy == true)
-                {
-                    tier1TierImage.Source = bitmapOpossumBuy;
-                }
-
-                if (kugelfischBuy == true)
-                {
-                    tier1TierImage.Source = bitmapKugelfischBuy;
-                }
-
-                if (megalodonBuy == true)
-                {
-                    tier1TierImage.Source = bitmapMegalodonBuy;
-                }
-
-                if (bajoBuy == true)
-                {
-                    tier1TierImage.Source = bitmapBajoBuy;
-                }
+                case "wiesengehege":
+                    gehegeImage.Source = bitmapWiesenGehege;
+                    break;
+                case "wassergehege":
+                    gehegeImage.Source = bitmapWasserGehege;
+                    break;
             }
-
-           
         }
 
-        public void unitsFutterValues()
+        private void loadAnimalPic()
         {
-            futterAnzahlLabel.Content= futterAnzahl;
-            unitsAnzahlLabel.Content= unitsAnzahl;
+            var dodoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Dodo.jpg", UriKind.Relative)));
+
+            var wombatBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Wombat.jpg", UriKind.Relative)));
+
+            var opossumBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Opossum.jpg", UriKind.Relative)));
+
+            var kugelfischBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Kugelfisch.jpg", UriKind.Relative)));
+
+            var megalodonBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Megalodon.jpg", UriKind.Relative)));
+
+            var bajoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Bajo.jpg", UriKind.Relative)));
+
+            switch (GameManager.animalsContainer[0])
+            {
+                case "dodo":
+                    tierImage.Source = dodoBitmap;
+                    erstesTier.animalName = "Dodo";
+                    animalNameLabel.Content= erstesTier.animalName;
+                    break;
+                case "wombat":
+                    tierImage.Source = wombatBitmap;
+                    erstesTier.animalName = "Wombat";
+                    animalNameLabel.Content = erstesTier.animalName;
+                    break;
+                case "opossum":
+                    tierImage.Source = opossumBitmap;
+                    erstesTier.animalName = "Opossum";
+                    animalNameLabel.Content = erstesTier.animalName;
+                    break;
+                case "kugelfisch":
+                    tierImage.Source = kugelfischBitmap;
+                    erstesTier.animalName = "Kugelfisch";
+                    animalNameLabel.Content = erstesTier.animalName;
+                    break;
+                case "megalodon":
+                    tierImage.Source = megalodonBitmap;
+                    erstesTier.animalName = "Megalodon";
+                    animalNameLabel.Content = erstesTier.animalName;
+                    break;
+                case "bajo":
+                    tierImage.Source = bajoBitmap;
+                    erstesTier.animalName = "Bajo";
+                    animalNameLabel.Content = erstesTier.animalName;
+                    break;
+            }
         }
     }
 }
