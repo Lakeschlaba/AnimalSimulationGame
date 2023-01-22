@@ -20,7 +20,7 @@ namespace AnimalSimulationGame
             GameManager.units += 500;
         }
 
-        public void hundespielzeug()
+        public void dogToys()
         {
             GameManager.randomChoose = random.Next(5) == 1;
 
@@ -182,7 +182,7 @@ namespace AnimalSimulationGame
             }   
         }
 
-        public void streicheln()
+        public void stroking()
         {
             GameManager.randomChoose = random.Next(5) == 1;
 

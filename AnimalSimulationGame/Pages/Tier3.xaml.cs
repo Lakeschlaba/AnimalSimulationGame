@@ -41,7 +41,7 @@ namespace AnimalSimulationGame
 
             drittesTier.health();
             drittesTier.hunger();
-            drittesTier.streicheln();
+            drittesTier.stroking();
             drittesTier.gameOver();
 
             initLabels();
@@ -75,7 +75,7 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn3_Click(object sender, RoutedEventArgs e)
         {
-            drittesTier.streicheln();
+            drittesTier.stroking();
             if (GameManager.wantsStroked3 == false)
             {
                 MessageBox.Show("Dein " + drittesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
@@ -91,7 +91,7 @@ namespace AnimalSimulationGame
                     drittesTier.animalSpeak();
                 }
             }
-            drittesTier.hundespielzeug();
+            drittesTier.dogToys();
         }
 
         private void initLabels()

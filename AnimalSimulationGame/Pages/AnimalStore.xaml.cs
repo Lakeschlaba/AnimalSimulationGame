@@ -25,7 +25,7 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            unitsFutterValues();
+            unitsFoodValues();
             checkAnimalBuyed();
         }
 
@@ -96,7 +96,7 @@ namespace AnimalSimulationGame
             animalBuyedInfos();
         }
 
-        public void checkAnimalBuyed()
+        private void checkAnimalBuyed()
         {
             if(GameManager.isDodoBuyed == true)
             {
@@ -173,7 +173,7 @@ namespace AnimalSimulationGame
             }
         }
 
-        public void unitsFutterValues()
+        private void unitsFoodValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";

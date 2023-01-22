@@ -25,7 +25,7 @@ namespace AnimalSimulationGame
         private void t_Tick(object sender, EventArgs e)
         {
             unitsDepot();
-            unitsFutterValues();
+            unitsFoodValues();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -41,20 +41,20 @@ namespace AnimalSimulationGame
             GameManager.units -= 50;
         }
 
-        private void buySpielzeugBajo_Click(object sender, RoutedEventArgs e)
+        private void buySpielzeugBajoBtn_Click(object sender, RoutedEventArgs e)
         {
             GameManager.dogToy += 1;
             GameManager.units -= 200;
         }
 
-        public void unitsFutterValues()
+        private void unitsFoodValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
             dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
-        public void unitsDepot()
+        private void unitsDepot()
         {
             if(GameManager.units < 50)
             {

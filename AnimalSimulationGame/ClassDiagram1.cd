@@ -17,7 +17,7 @@
   <Class Name="AnimalSimulationGame.Animals">
     <Position X="15.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAIAAAAAAAAAICAgAAAAAAAAQAQBAAAAAIg=</HashCode>
+      <HashCode>AgAQAAAAAAIAAAAAAAAAIAAgAAAAAAAAAAQBAAAAAIk=</HashCode>
       <FileName>Aniamls.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -38,7 +38,7 @@
   <Class Name="AnimalSimulationGame.AnimalSelection">
     <Position X="5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAEMAAAAAAAAAAAASAAAIAAAACAIAAAAAAIAAAA=</HashCode>
+      <HashCode>IAQAAAAMAAAAAAAAAAAACAAAEAAAAKAAAAAAAAIAQAA=</HashCode>
       <FileName>Pages\AnimalSelection.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -46,7 +46,7 @@
   <Class Name="AnimalSimulationGame.AnimalsHome">
     <Position X="5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AARAAAABAAAAAAAAAAAAAAAA4AAEACAAAAACAAAAAAA=</HashCode>
+      <HashCode>AARAAgAFAAAAAAAAAAAAAAAAAACAACAAAAAAAAAIAAA=</HashCode>
       <FileName>Pages\AnimalsHome.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -62,7 +62,7 @@
   <Class Name="AnimalSimulationGame.AnimalStore">
     <Position X="3.25" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAQEAAAJwAAAAAAAAAAAAAgAMAAAAyAAAAAAEAAAAAA=</HashCode>
+      <HashCode>IAQEAAAJwAAAAAAAAAAAAAgAEACAAyAAAAAAEAAAAAA=</HashCode>
       <FileName>Pages\AnimalStore.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -70,7 +70,7 @@
   <Class Name="AnimalSimulationGame.BarnStore">
     <Position X="6.75" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEREAAAIAAAAAAAAAAAAAEAAAAAAACQAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEREAAAIAAAAAAAAAAAAAEAAAAAAACAAAgAAAAAAAAA=</HashCode>
       <FileName>Pages\BarnStore.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -78,7 +78,7 @@
   <Class Name="AnimalSimulationGame.ItemsStore">
     <Position X="8.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEAAIAAAAAAAAAAAAAAAAIAAAACAAAAAAICAAAAA=</HashCode>
+      <HashCode>AAQAAAAIAAAAAAAAAAAAAAAAAACAACAAABAAICAAAAA=</HashCode>
       <FileName>Pages\ItemsStore.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -114,6 +114,13 @@
       <FileName>Pages\Tier4.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AnimalSimulationGame.utils.GameManager">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AK0AgABAIAQAAQAAQCQEAAAgIBB5UAAAgQAAAIAECAA=</HashCode>
+      <FileName>utils\GameManager.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

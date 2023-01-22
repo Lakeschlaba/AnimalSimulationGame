@@ -24,7 +24,7 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            unitsFutterValues();
+            unitsFoodValues();
         }
 
         private void AnimalStoreBtn_Click(object sender, RoutedEventArgs e)
@@ -34,40 +34,40 @@ namespace AnimalSimulationGame
             this.Close();
         }
 
-        private void BarnStore_Click(object sender, RoutedEventArgs e)
+        private void BarnStoreBtn_Click(object sender, RoutedEventArgs e)
         {
             BarnStore barnStore = new BarnStore();
             barnStore.Show();
             this.Close();
         }
 
-        private void AnimalSelection_Click(object sender, RoutedEventArgs e)
+        private void AnimalSelectionBtn_Click(object sender, RoutedEventArgs e)
         {
             AnimalSelection animalSelection = new AnimalSelection();
             animalSelection.Show();
             this.Close();
         }
 
-        private void ItemsStore_Click(object sender, RoutedEventArgs e)
+        private void ItemsStoreBtn_Click(object sender, RoutedEventArgs e)
         {
             ItemsStore itemsStore = new ItemsStore();
             itemsStore.Show();
             this.Close();
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
+        private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
 
-        public void unitsFutterValues()
+        private void unitsFoodValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
             dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
-        public void checkBarnContainer()
+        private void checkBarnContainer()
         {
             if(GameManager.isWasserGehegeBuyed || GameManager.isWiesenGehegeBuyed == true)
             {

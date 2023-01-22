@@ -25,7 +25,7 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            unitsFutterGehegeValues();
+            unitsFoodGehegeValues();
             checkBarnIsBuyed();
 
         }
@@ -65,7 +65,7 @@ namespace AnimalSimulationGame
             MessageBox.Show("Kaufe ein Tier, für dieses Gehege!");
         }
 
-        public void unitsFutterGehegeValues()
+        private void unitsFoodGehegeValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";

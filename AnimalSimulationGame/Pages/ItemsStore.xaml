@@ -13,7 +13,7 @@
         <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" Cursor="Hand" FontWeight="Bold" Click="BackBtn_Click"/>
 
         <Button Name="buyFutterBtn" Content="Buy" HorizontalAlignment="Left" Margin="150,355,0,0" VerticalAlignment="Top" Width="172" Height="41" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="buyFutterBtn_Click" IsEnabled="True"/>
-        <Button Name="buySpielzeugBajo" Content="Buy" HorizontalAlignment="Left" Margin="502,355,0,0" VerticalAlignment="Top" Width="171" Height="41" FontSize="15" FontWeight="Bold" Cursor="Hand" IsEnabled="True" Click="buySpielzeugBajo_Click"/>
+        <Button Name="buySpielzeugBajo" Content="Buy" HorizontalAlignment="Left" Margin="502,355,0,0" VerticalAlignment="Top" Width="171" Height="41" FontSize="15" FontWeight="Bold" Cursor="Hand" IsEnabled="True" Click="buySpielzeugBajoBtn_Click"/>
 
         <Label Content="Universal Futter" HorizontalAlignment="Left" Margin="172,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Content="Hundespielzeug" HorizontalAlignment="Left" Margin="522,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>

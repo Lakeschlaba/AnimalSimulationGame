@@ -37,7 +37,7 @@ namespace AnimalSimulationGame
         {
             erstesTier.health();
             erstesTier.hunger();
-            erstesTier.streicheln();
+            erstesTier.stroking();
             erstesTier.gameOver();
 
             initValues();
@@ -71,7 +71,7 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
-            erstesTier.streicheln();
+            erstesTier.stroking();
             if (GameManager.wantsStroked1 == false)
             {
                 MessageBox.Show("Dein " + erstesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
@@ -87,7 +87,7 @@ namespace AnimalSimulationGame
                     erstesTier.animalSpeak();
                 }
             }
-            erstesTier.hundespielzeug();
+            erstesTier.dogToys();
         }
 
         private void initValues()

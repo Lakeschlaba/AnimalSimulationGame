@@ -40,7 +40,7 @@ namespace AnimalSimulationGame
 
             zweitesTier.health();
             zweitesTier.hunger();
-            zweitesTier.streicheln();
+            zweitesTier.stroking();
             zweitesTier.gameOver();
 
             initLabels();
@@ -74,7 +74,7 @@ namespace AnimalSimulationGame
 
         private void streichelnBtn2_Click(object sender, RoutedEventArgs e)
         {
-            zweitesTier.streicheln();
+            zweitesTier.stroking();
             if (GameManager.wantsStroked2 == false)
             {
                 MessageBox.Show("Dein " + zweitesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
@@ -90,7 +90,7 @@ namespace AnimalSimulationGame
                     zweitesTier.animalSpeak();
                 }
             }
-            zweitesTier.hundespielzeug();
+            zweitesTier.dogToys();
         }
 
         private void initLabels()

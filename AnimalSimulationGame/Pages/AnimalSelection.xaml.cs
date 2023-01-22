@@ -24,7 +24,7 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            unitsFutterValues();
+            unitsFoodalues();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -39,42 +39,42 @@ namespace AnimalSimulationGame
             Application.Current.Shutdown();
         }
 
-        private void Tier1_Click(object sender, RoutedEventArgs e)
+        private void Tier1Btn_Click(object sender, RoutedEventArgs e)
         {
             Tier1 tier1Window = new Tier1();
             tier1Window.Show();
             this.Close();
         }
 
-        private void Tier2_Click(object sender, RoutedEventArgs e)
+        private void Tier2Btn_Click(object sender, RoutedEventArgs e)
         {
             Tier2 tier2Window = new Tier2();
             tier2Window.Show();
             this.Close();
         }
 
-        private void Tier3_Click(object sender, RoutedEventArgs e)
+        private void Tier3Btn_Click(object sender, RoutedEventArgs e)
         {
             Tier3 tier3Window = new Tier3();
             tier3Window.Show();
             this.Close();
         }
 
-        private void Tier4_Click(object sender, RoutedEventArgs e)
+        private void Tier4Btn_Click(object sender, RoutedEventArgs e)
         {
             Tier4 tier4Window = new Tier4();
             tier4Window.Show();
             this.Close();
         }
 
-        public void unitsFutterValues()
+        private void unitsFoodalues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
             dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
-        public void checkAnimalCount()
+        private void checkAnimalCount()
         {
             if (GameManager.animalsContainer.Count == 0 || GameManager.barnsContainer.Count == 0)
             {
