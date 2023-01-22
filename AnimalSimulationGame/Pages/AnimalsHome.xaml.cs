@@ -1,15 +1,6 @@
 ﻿using AnimalSimulationGame.utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace AnimalSimulationGame
@@ -20,7 +11,7 @@ namespace AnimalSimulationGame
     public partial class AnimalsHome : Window
     {
         DispatcherTimer timer = new DispatcherTimer();
-        ItemsStore unitsFutter = new ItemsStore();
+
         public AnimalsHome()
         {
             InitializeComponent();
@@ -70,7 +61,7 @@ namespace AnimalSimulationGame
         public void unitsFutterValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
-            unitsAnzahlLabel.Content = GameManager.units;
+            unitsAnzahlLabel.Content = GameManager.units + "$";
         }
     }
 }

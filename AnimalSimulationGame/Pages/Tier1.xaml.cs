@@ -1,20 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using static AnimalSimulationGame.ItemsStore;
-using static AnimalSimulationGame.AnimalStore;
-using static AnimalSimulationGame.utils.GameManager;
-using static AnimalSimulationGame.BarnStore;
-using System.IO;
 using AnimalSimulationGame.utils;
 using AnimalSimulationGame.AnimalObjects;
 
@@ -35,6 +22,7 @@ namespace AnimalSimulationGame
         public Tier1()
         {
             InitializeComponent();
+
             initValues();
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
@@ -47,7 +35,6 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-
             erstesTier.health();
             erstesTier.hunger();
             erstesTier.streicheln();
@@ -108,14 +95,14 @@ namespace AnimalSimulationGame
             futter1.Value = GameManager.foodAnimal1;
 
             futterAnzahlLabel.Content = GameManager.foodAmount;
-            unitsAnzahlLabel.Content = GameManager.units;
+            unitsAnzahlLabel.Content = GameManager.units + "$";
         }
 
         private void loadBarnPic()
         {
-            var bitmapWiesenGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wiesenGehege.png", UriKind.Relative)));
+            var bitmapWiesenGehege = new BitmapImage(new Uri("pack://application:,,,/Images/wiesenGehege.png"));
 
-            var bitmapWasserGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wasserGehege.png", UriKind.Relative)));
+            var bitmapWasserGehege = new BitmapImage(new Uri("pack://application:,,,/Images/wasserGehege.png"));
 
             switch (GameManager.barnsContainer[0])
             {
@@ -126,23 +113,21 @@ namespace AnimalSimulationGame
                     gehegeImage.Source = bitmapWasserGehege;
                     break;
             }
-
-
         }
 
         private void loadAnimalPic()
         {
-            var dodoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Dodo.jpg", UriKind.Relative)));
+            var dodoBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Dodo.jpg"));
 
-            var wombatBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Wombat.jpg", UriKind.Relative)));
+            var wombatBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Wombat.jpg"));
 
-            var opossumBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Opossum.jpg", UriKind.Relative)));
+            var opossumBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Opossum.jpg"));
 
-            var kugelfischBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Kugelfisch.jpg", UriKind.Relative)));
+            var kugelfischBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Kugelfisch.jpg"));
 
-            var megalodonBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Megalodon.jpg", UriKind.Relative)));
+            var megalodonBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Megalodon.jpg"));
 
-            var bajoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Bajo.jpg", UriKind.Relative)));
+            var bajoBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Bajo.jpg"));
 
             switch (GameManager.animalsContainer[0])
             {

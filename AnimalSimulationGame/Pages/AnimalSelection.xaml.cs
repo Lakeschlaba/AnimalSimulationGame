@@ -1,18 +1,7 @@
 ﻿using AnimalSimulationGame.utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-
-using static AnimalSimulationGame.utils.GameManager;
 
 namespace AnimalSimulationGame
 {
@@ -80,12 +69,12 @@ namespace AnimalSimulationGame
         public void unitsFutterValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
-            unitsAnzahlLabel.Content = GameManager.units;
+            unitsAnzahlLabel.Content = GameManager.units + "$";
         }
 
         public void checkAnimalCount()
         {
-            if (animalsContainer.Count == 0 || barnsContainer.Count == 0)
+            if (GameManager.animalsContainer.Count == 0 || GameManager.barnsContainer.Count == 0)
             {
                 Tier1.IsEnabled= false;
                 Tier2.IsEnabled = false;
@@ -94,20 +83,20 @@ namespace AnimalSimulationGame
                 MessageBox.Show("Du hast noch kein Tier bzw. Gehege gekauft, änder dies!");
             }
 
-            if (animalsContainer.Count == 1 || barnsContainer.Count == 1)
+            if (GameManager.animalsContainer.Count == 1 || GameManager.barnsContainer.Count == 1)
             {
                 Tier2.IsEnabled = false;
                 Tier3.IsEnabled = false;
                 Tier4.IsEnabled = false;
             }
 
-            if (animalsContainer.Count == 2 || barnsContainer.Count == 2)
+            if (GameManager.animalsContainer.Count == 2 || GameManager.barnsContainer.Count == 2)
             {
                 Tier3.IsEnabled = false;
                 Tier4.IsEnabled = false;
             }
 
-            if (animalsContainer.Count == 3 || barnsContainer.Count == 3)
+            if (GameManager.animalsContainer.Count == 3 || GameManager.barnsContainer.Count == 3)
             {
                 Tier4.IsEnabled = false;
             }

@@ -6,16 +6,37 @@
         xmlns:local="clr-namespace:AnimalSimulationGame"
         xmlns:wpfanimated="http://wpfanimatedgif.codeplex.com"
         mc:Ignorable="d"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        Icon="pack://application:,,,/Images/animalSimulationGame.ico"
         WindowStartupLocation="CenterScreen"
-        Title="AnimalsMenu" Height="450" Width="800">
+        Title="Animals Menu" Height="450" Width="800">
+    
     <Grid>
-        <Canvas>
-            <Button Name="StartBtn" Content="Start" Canvas.Left="340" Canvas.Top="154" Height="32" Width="120" Click="StartBtn_Click"/>
-            <Button Name="ExitBtn" Content="Exit" Canvas.Left="340" Canvas.Top="237" Height="34" Width="120" Click="ExitBtn_Click"/>
-            <Label Content="Animal Simulation Game" FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Canvas.Left="278" Canvas.Top="64" VerticalAlignment="Top"/>
-            
-        </Canvas>
-        <Image HorizontalAlignment="Left" Height="100" Margin="552,254,0,0" VerticalAlignment="Top" Width="100"/>
+        <Image HorizontalAlignment="Left" Height="38" VerticalAlignment="Top" Width="71" Canvas.Left="329" Canvas.Top="136" gif:ImageBehavior.AnimatedSource="pack://application:,,,/Images/SleeepingPanda.gif" RenderTransformOrigin="0.5,0.5" Margin="331,121,0,0">
 
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="7.396"/>
+                    <RotateTransform Angle="-20.17"/>
+                    <TranslateTransform X="0.87" Y="2.721"/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+        <Canvas>
+            <Button Name="StartBtn" Content="Start" Canvas.Left="340" Canvas.Top="154" Height="32" Width="120" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="StartBtn_Click"/>
+            <Button Name="ExitBtn" Content="Exit" Canvas.Left="340" Canvas.Top="237" Height="34" Width="120" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="ExitBtn_Click"/>
+
+            <Label Content="Animal Simulation Game" FontSize="26" FontWeight="Bold" HorizontalAlignment="Left" Canvas.Left="278" Canvas.Top="64" VerticalAlignment="Top"/>
+           
+        </Canvas>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4dff4d" Offset="0.01" />
+                <GradientStop Color="#80ff80" Offset="0.2" />
+                <GradientStop Color="#ccffcc" Offset="0.7" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

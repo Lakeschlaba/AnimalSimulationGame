@@ -1,23 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-using static System.Net.Mime.MediaTypeNames;
-using static AnimalSimulationGame.AnimalStore;
-using static AnimalSimulationGame.BarnStore;
-using static AnimalSimulationGame.ItemsStore;
-using System.IO;
 using AnimalSimulationGame.utils;
 using AnimalSimulationGame.AnimalObjects;
-using ViertesTier = AnimalSimulationGame.AnimalObjects.ViertesTier;
 
 namespace AnimalSimulationGame
 {
@@ -28,16 +14,14 @@ namespace AnimalSimulationGame
     {
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer timerForRent = new DispatcherTimer();
+
         Animals viertesTier = new ViertesTier();
 
         Random random = new Random();
-        private bool animalNachricht;
 
         public Tier4()
         {
             InitializeComponent();
-
-            Console.WriteLine(GameManager.animalsContainer);
 
             initLabels();
             timer.Interval = TimeSpan.FromMilliseconds(100);
@@ -52,8 +36,8 @@ namespace AnimalSimulationGame
         private void t_Tick(object sender, EventArgs e) 
         {
 
-            gesundheit1.Value = GameManager.healthAnimal4;
-            futter1.Value = GameManager.foodAnimal4;
+            gesundheit4.Value = GameManager.healthAnimal4;
+            futter4.Value = GameManager.foodAnimal4;
 
             viertesTier.health();
             viertesTier.hunger();
@@ -77,27 +61,27 @@ namespace AnimalSimulationGame
             this.Close();
         }
 
-        private void feedBtn1_Click(object sender, RoutedEventArgs e)
+        private void feedBtn4_Click(object sender, RoutedEventArgs e)
         {
             viertesTier.eat();
             if (GameManager.foodAmount <= 0)
             {
                 MessageBox.Show("Du musst Universal-Futter kaufen!");
-                feedBtn1.IsEnabled = false;
+                feedBtn4.IsEnabled = false;
             }
         }
 
-        private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
+        private void streichelnBtn4_Click(object sender, RoutedEventArgs e)
         {
             viertesTier.streicheln();
             if (GameManager.wantsStroked4 == false)
             {
                 MessageBox.Show("Dein " + viertesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
-                streichelnBtn1.IsEnabled = false;
+                streichelnBtn4.IsEnabled = false;
             }
             else
             {
-                streichelnBtn1.IsEnabled = true;
+                streichelnBtn4.IsEnabled = true;
                 GameManager.randomChoose = random.Next(3) == 1;
 
                 if (GameManager.randomChoose == true)
@@ -111,14 +95,14 @@ namespace AnimalSimulationGame
         private void initLabels()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
-            unitsAnzahlLabel.Content = GameManager.units;
+            unitsAnzahlLabel.Content = GameManager.units + "$";
         }
 
         private void loadBarnPic()
         {
-            var bitmapWiesenGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wiesenGehege.png", UriKind.Relative)));
+            var bitmapWiesenGehege = new BitmapImage(new Uri("pack://application:,,,/Images/wiesenGehege.png"));
 
-            var bitmapWasserGehege = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/wasserGehege.png", UriKind.Relative)));
+            var bitmapWasserGehege = new BitmapImage(new Uri("pack://application:,,,/Images/wasserGehege.png"));
 
             switch (GameManager.barnsContainer[3])
             {
@@ -134,17 +118,17 @@ namespace AnimalSimulationGame
         private void loadAnimalPic()
         {
 
-            var dodoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Dodo.jpg", UriKind.Relative)));
+            var dodoBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Dodo.jpg"));
 
-            var wombatBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Wombat.jpg", UriKind.Relative)));
+            var wombatBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Wombat.jpg"));
 
-            var opossumBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Opossum.jpg", UriKind.Relative)));
+            var opossumBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Opossum.jpg"));
 
-            var kugelfischBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Kugelfisch.jpg", UriKind.Relative)));
+            var kugelfischBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Kugelfisch.jpg"));
 
-            var megalodonBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Megalodon.jpg", UriKind.Relative)));
+            var megalodonBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Megalodon.jpg"));
 
-            var bajoBitmap = new BitmapImage(new Uri(new Uri(Directory.GetCurrentDirectory(), UriKind.Absolute), new Uri(@"../../Images/Bajo.jpg", UriKind.Relative)));
+            var bajoBitmap = new BitmapImage(new Uri("pack://application:,,,/Images/Bajo.jpg"));
 
             switch (GameManager.animalsContainer[3])
             {

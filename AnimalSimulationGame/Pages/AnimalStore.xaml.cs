@@ -1,19 +1,7 @@
 ﻿using AnimalSimulationGame.utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-
-using static AnimalSimulationGame.ItemsStore;
-using static AnimalSimulationGame.utils.GameManager;
 
 namespace AnimalSimulationGame
 {
@@ -37,7 +25,6 @@ namespace AnimalSimulationGame
         {
             unitsFutterValues();
             checkAnimalBuyed();
-            
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -52,7 +39,7 @@ namespace AnimalSimulationGame
             GameManager.isDodoBuyed = true;
             GameManager.animalsContainer.Add("dodo");
             GameManager.units -= 500;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         private void wombatBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -60,7 +47,7 @@ namespace AnimalSimulationGame
             GameManager.isWombatBuyed = true;
             GameManager.animalsContainer.Add("wombat");
             GameManager.units -= 800;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         private void opossumBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -68,7 +55,7 @@ namespace AnimalSimulationGame
             GameManager.isOpossumBuyed = true;
             GameManager.animalsContainer.Add("opossum");
             GameManager.units -= 1000;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         private void kugelfischBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -76,7 +63,7 @@ namespace AnimalSimulationGame
             GameManager.isKugelfischBuyed = true;
             GameManager.animalsContainer.Add("kugelfisch");
             GameManager.units -= 4000;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         private void megalodonBuybtn_Click(object sender, RoutedEventArgs e)
@@ -84,7 +71,7 @@ namespace AnimalSimulationGame
             GameManager.isMegalodonBuyed = true;
             GameManager.animalsContainer.Add("megalodon");
             GameManager.units -= 7800;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         private void bajoBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -93,7 +80,7 @@ namespace AnimalSimulationGame
             GameManager.animalsContainer.Add("bajo");
             GameManager.units -= 10000;
             bajoBuyBtn.IsEnabled = false;
-            showMaxTiereInfo();
+            showMaxBuyedAnimalInfo();
         }
 
         public void checkAnimalBuyed()
@@ -129,7 +116,7 @@ namespace AnimalSimulationGame
                 bajoBuyBtn.IsEnabled = false;
             }
 
-            if(animalsContainer.Count == 4)
+            if(GameManager.animalsContainer.Count == 4)
             {
                 dodoBuyBtn.IsEnabled = false;
                 wombatBuyBtn.IsEnabled = false;
@@ -142,9 +129,9 @@ namespace AnimalSimulationGame
 
 
 
-        public void showMaxTiereInfo()
+        public void showMaxBuyedAnimalInfo()
         {
-            if (animalsContainer.Count == 4)
+            if (GameManager.animalsContainer.Count == 4)
             {
                 MessageBox.Show("Du hast jetzt die maximale Anzahl an Tieren gekauft!");
             }

@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Images/animalSimulationGame.ico"
         WindowStartupLocation="CenterScreen"
-        Title="Tier4" Height="500" Width="850">
+        Title="Tier 4" Height="500" Width="850">
     <Grid>
-        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click"/>
+        <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Cursor="Hand" Click="BackBtn_Click"/>
 
         <Label Name="animalNameLabel" Content="Tier 4" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
 
-        <Button Name="feedBtn1" Content="Füttern" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" Height="22" Width="80" FontSize="12" FontWeight="Bold" Click="feedBtn1_Click" />
-        <Button Name="streichelnBtn1" Content="Streicheln" HorizontalAlignment="Center" Margin="0,387,0,0" VerticalAlignment="Top" Height="22" Width="80" FontSize="12" FontWeight="Bold" Click="streichelnBtn1_Click" />
-        
-        <ProgressBar Name="gesundheit1" Value="0" HorizontalAlignment="Left" Height="14" Margin="654,130,0,0" VerticalAlignment="Top" Width="136"/>
-        <TextBlock Text="{Binding ElementName=gesundheit1, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="715,128,0,0" />
-        <ProgressBar Name="futter1" Value="0" HorizontalAlignment="Left" Height="14" Margin="654,203,0,0" VerticalAlignment="Top" Width="136"/>
-        <TextBlock Text="{Binding ElementName=futter1, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="715,201,0,0" />
+        <Button Name="feedBtn4" Content="Füttern" HorizontalAlignment="Center" Margin="0,336,0,0" VerticalAlignment="Top" Width="125" Height="35" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="feedBtn4_Click" />
+        <Button Name="streichelnBtn4" Content="Streicheln" HorizontalAlignment="Center" Margin="0,396,0,0" VerticalAlignment="Top" Width="126" Height="35" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="streichelnBtn4_Click" />
+
+        <ProgressBar Name="gesundheit4" Value="0" HorizontalAlignment="Left" Height="14" Margin="654,130,0,0" VerticalAlignment="Top" Width="136"/>
+        <TextBlock Text="{Binding ElementName=gesundheit4, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="715,128,0,0" />
+        <ProgressBar Name="futter4" Value="0" HorizontalAlignment="Left" Height="14" Margin="654,203,0,0" VerticalAlignment="Top" Width="136"/>
+        <TextBlock Text="{Binding ElementName=futter4, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="715,201,0,0" />
 
         <Label Content="Gesundheit:" HorizontalAlignment="Left" Margin="717,104,0,0" VerticalAlignment="Top"/>
         <Label Content="Futter:" HorizontalAlignment="Left" Margin="746,177,0,0" VerticalAlignment="Top"/>
@@ -26,9 +27,17 @@
         <Image Name="gehegeImage" HorizontalAlignment="Center" Height="200" Margin="0,117,0,0" VerticalAlignment="Top" Width="auto"/>
         <Image Name="tierImage" HorizontalAlignment="Center" Height="120" Margin="0,165,0,0" VerticalAlignment="Top" Width="auto"/>
 
-        <Label Content="Units: " HorizontalAlignment="Left" Margin="616,10,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="Universal-Futter:" HorizontalAlignment="Left" Margin="616,43,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top"/>
-        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top"/>
+        <Label Content="Units:" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Futter:" HorizontalAlignment="Left" Margin="630,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green" FontWeight="Bold"/>
+        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown" FontWeight="Bold"/>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4dff4d" Offset="0.01" />
+                <GradientStop Color="#80ff80" Offset="0.2" />
+                <GradientStop Color="#ccffcc" Offset="0.7" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

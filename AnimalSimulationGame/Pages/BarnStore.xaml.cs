@@ -1,19 +1,7 @@
 ﻿using AnimalSimulationGame.utils;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Threading;
-
-using static AnimalSimulationGame.ItemsStore;
-using static AnimalSimulationGame.utils.GameManager;
 
 namespace AnimalSimulationGame
 {
@@ -63,7 +51,7 @@ namespace AnimalSimulationGame
 
         public void showMaxGehegeInfo()
         {   
-            if (barnsContainer.Count == 4)
+            if (GameManager.barnsContainer.Count == 4)
             {
                 MessageBox.Show("Du hast jetzt die maximale Anzahl an Gehegen gekauft!");
             }
@@ -72,7 +60,7 @@ namespace AnimalSimulationGame
         public void unitsFutterGehegeValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
-            unitsAnzahlLabel.Content = GameManager.units;
+            unitsAnzahlLabel.Content = GameManager.units + "$";
 
             if (GameManager.units < 500)
             {
@@ -84,7 +72,7 @@ namespace AnimalSimulationGame
                 wasserGehegeBtn.IsEnabled = false;
             }
 
-            if(barnsContainer.Count == 4) 
+            if(GameManager.barnsContainer.Count == 4) 
             {
                 wiesenGehegeBtn.IsEnabled = false;
                 wasserGehegeBtn.IsEnabled = false;

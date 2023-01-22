@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Images/animalSimulationGame.ico"
         WindowStartupLocation="CenterScreen"
-        Title="AnimalStore" Height="1000" Width="800">
-    <Grid Margin="0,0,0,0">
-        
+        Title="Animal Store" Height="900" Width="800">
+    <Grid>
         <Label Name="Dodo" Content="Dodo" HorizontalAlignment="Left" Margin="100,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Opossum" Content="Opossum" HorizontalAlignment="Left" Margin="600,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
         <Label Name="Wombat" Content="Wombat" HorizontalAlignment="Center" Margin="0,150,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
@@ -29,20 +29,27 @@
         <Label Content="4000$" HorizontalAlignment="Left" Margin="98,738,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Green" FontSize="14"/>
         <Label Content="7800$" HorizontalAlignment="Center" Margin="0,738,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Green" FontSize="14"/>
         <Label Content="10000$" HorizontalAlignment="Left" Margin="610,738,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="Green" FontSize="14"/>
-        <Label Content="Animal Store" HorizontalAlignment="Center" Margin="0,51,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
 
         <Label Content="Units:" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
         <Label Content="Futter:" HorizontalAlignment="Left" Margin="630,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
-        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green"/>
-        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown"/>
+        <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green" FontWeight="Bold"/>
+        <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown" FontWeight="Bold"/>
 
         <Button Name="BackBtn" Content="Back" HorizontalAlignment="Left" Margin="14,24,0,0" VerticalAlignment="Top" Height="44" Width="160" FontSize="16" FontWeight="Bold" Click="BackBtn_Click" Cursor="Hand" />
-        
-        <Image HorizontalAlignment="Left" Height="150" Margin="52,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Dodo.jpg" />
-        <Image HorizontalAlignment="Center" Height="150" Margin="0,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Wombat.jpg" />
-        <Image HorizontalAlignment="Left" Height="150" Margin="542,190,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Opossum.jpg" />
-        <Image HorizontalAlignment="Left" Height="150" Margin="26,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Kugelfisch.jpg" />
-        <Image HorizontalAlignment="Center" Height="150" Margin="0,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Megalodon.jpg" />
-        <Image HorizontalAlignment="Left" Height="150" Margin="583,565,0,0" VerticalAlignment="Top" Width="auto" Source="C:\Users\gereo\Documents\ProgrammeC#\AnimalSimulationGame\AnimalSimulationGame\Images\Bajo.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="52,190,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Dodo.jpg"/>
+        <Image HorizontalAlignment="Center" Height="150" Margin="0,190,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Wombat.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="542,190,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Opossum.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="26,565,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Kugelfisch.jpg" />
+        <Image HorizontalAlignment="Center" Height="150" Margin="0,565,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Megalodon.jpg" />
+        <Image HorizontalAlignment="Left" Height="150" Margin="583,565,0,0" VerticalAlignment="Top" Width="auto" Source="pack://application:,,,/Images/Bajo.jpg" />
+        <Label Content="Animal Store" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#4dff4d" Offset="0.01" />
+                <GradientStop Color="#80ff80" Offset="0.2" />
+                <GradientStop Color="#ccffcc" Offset="0.7" />
+            </LinearGradientBrush>
+        </Grid.Background>
     </Grid>
 </Window>

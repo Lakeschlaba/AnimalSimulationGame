@@ -8,6 +8,20 @@
 
   <ItemGroup>
     <None Remove="Download.jpg" />
+    <None Remove="Images\animalSimulationGame.ico" />
+    <None Remove="Images\Bajo.jpg" />
+    <None Remove="Images\BajoSpielzeug.png" />
+    <None Remove="Images\Dodo.jpg" />
+    <None Remove="Images\Futter.png" />
+    <None Remove="Images\Katze.gif" />
+    <None Remove="Images\Kugelfisch.jpg" />
+    <None Remove="Images\Megalodon.jpg" />
+    <None Remove="Images\Opossum.jpg" />
+    <None Remove="Images\SleeepingPanda.gif" />
+    <None Remove="Images\SleepingDog.gif" />
+    <None Remove="Images\wasserGehege.png" />
+    <None Remove="Images\wiesenGehege.png" />
+    <None Remove="Images\Wombat.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,9 +29,38 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\animalSimulationGame.ico" />
+    <Resource Include="Images\Bajo.jpg" />
+    <Resource Include="Images\BajoSpielzeug.png" />
+    <Resource Include="Images\Dodo.jpg" />
+    <Resource Include="Images\Futter.png" />
+    <Resource Include="Images\Katze.gif" />
+    <Resource Include="Images\Kugelfisch.jpg" />
+    <Resource Include="Images\Megalodon.jpg" />
+    <Resource Include="Images\Opossum.jpg" />
+    <Resource Include="Images\SleeepingPanda.gif" />
+    <Resource Include="Images\SleepingDog.gif" />
+    <Resource Include="Images\wasserGehege.png" />
+    <Resource Include="Images\wiesenGehege.png" />
+    <Resource Include="Images\Wombat.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Update="Tier1 - Kopieren %282%29.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
