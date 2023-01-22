@@ -16,6 +16,8 @@ namespace AnimalSimulationGame
         public AnimalStore()
         {
             InitializeComponent();
+            checkBarnContainer();
+
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
@@ -39,7 +41,9 @@ namespace AnimalSimulationGame
             GameManager.isDodoBuyed = true;
             GameManager.animalsContainer.Add("dodo");
             GameManager.units -= 500;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         private void wombatBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -47,7 +51,9 @@ namespace AnimalSimulationGame
             GameManager.isWombatBuyed = true;
             GameManager.animalsContainer.Add("wombat");
             GameManager.units -= 800;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         private void opossumBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -55,7 +61,9 @@ namespace AnimalSimulationGame
             GameManager.isOpossumBuyed = true;
             GameManager.animalsContainer.Add("opossum");
             GameManager.units -= 1000;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         private void kugelfischBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -63,7 +71,9 @@ namespace AnimalSimulationGame
             GameManager.isKugelfischBuyed = true;
             GameManager.animalsContainer.Add("kugelfisch");
             GameManager.units -= 4000;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         private void megalodonBuybtn_Click(object sender, RoutedEventArgs e)
@@ -71,7 +81,9 @@ namespace AnimalSimulationGame
             GameManager.isMegalodonBuyed = true;
             GameManager.animalsContainer.Add("megalodon");
             GameManager.units -= 7800;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         private void bajoBuyBtn_Click(object sender, RoutedEventArgs e)
@@ -79,13 +91,13 @@ namespace AnimalSimulationGame
             GameManager.isBajoBuyed = true;
             GameManager.animalsContainer.Add("bajo");
             GameManager.units -= 10000;
-            bajoBuyBtn.IsEnabled = false;
-            showMaxBuyedAnimalInfo();
+
+            barnCanBuy();
+            animalBuyedInfos();
         }
 
         public void checkAnimalBuyed()
         {
-
             if(GameManager.isDodoBuyed == true)
             {
                 dodoBuyBtn.IsEnabled = false;
@@ -127,13 +139,37 @@ namespace AnimalSimulationGame
             }
         }
 
-
-
-        public void showMaxBuyedAnimalInfo()
+        private void animalBuyedInfos()
         {
             if (GameManager.animalsContainer.Count == 4)
             {
                 MessageBox.Show("Du hast jetzt die maximale Anzahl an Tieren gekauft!");
+            }
+            
+            if(GameManager.animalsContainer.Count <= 3)
+            {
+                MessageBox.Show("Kaufe ein weiteres Gehege!");
+            }
+        }
+
+        private void checkBarnContainer()
+        {
+            if(GameManager.barnsContainer.Count == 0)
+            {
+                return;
+            }
+         
+            if (GameManager.barnsContainer[GameManager.barnsContainer.Count - 1].Equals("wiesengehege"))
+            {
+                kugelfischBuyBtn.IsEnabled = false;
+                megalodonBuybtn.IsEnabled = false;
+            }
+            else
+            {
+                dodoBuyBtn.IsEnabled = false;
+                wombatBuyBtn.IsEnabled = false;
+                opossumBuyBtn.IsEnabled = false;
+                bajoBuyBtn.IsEnabled = false;
             }
         }
 
@@ -141,6 +177,7 @@ namespace AnimalSimulationGame
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
 
             if (GameManager.units < 500)
             {
@@ -169,6 +206,22 @@ namespace AnimalSimulationGame
 
             if (GameManager.units < 10000)
             {
+                bajoBuyBtn.IsEnabled = false;
+            }
+        }
+
+        private void barnCanBuy()
+        {
+            GameManager.isWasserGehegeBuyed = false;
+            GameManager.isWiesenGehegeBuyed = false;
+
+            if(GameManager.isWiesenGehegeBuyed == false)
+            {
+                dodoBuyBtn.IsEnabled = false;
+                wombatBuyBtn.IsEnabled = false;
+                opossumBuyBtn.IsEnabled = false;
+                kugelfischBuyBtn.IsEnabled = false;
+                megalodonBuybtn.IsEnabled = false;
                 bajoBuyBtn.IsEnabled = false;
             }
         }

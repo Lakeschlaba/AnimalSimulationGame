@@ -51,6 +51,7 @@ namespace AnimalSimulationGame
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
         public void unitsDepot()

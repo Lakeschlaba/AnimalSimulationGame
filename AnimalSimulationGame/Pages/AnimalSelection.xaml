@@ -22,8 +22,10 @@
 
         <Label Content="Units:" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
         <Label Content="Futter:" HorizontalAlignment="Left" Margin="630,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Dog Toy:" HorizontalAlignment="Left" Margin="630,78,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green" FontWeight="Bold"/>
         <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown" FontWeight="Bold"/>
+        <Label Name="dogToyAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,78,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Blue" FontWeight="Bold"/>
 
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">

@@ -1,5 +1,6 @@
 ﻿using AnimalSimulationGame.utils;
 using System;
+using System.Reflection;
 using System.Windows;
 using System.Windows.Threading;
 
@@ -16,6 +17,7 @@ namespace AnimalSimulationGame
         public BarnStore()
         {
             InitializeComponent();
+
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
@@ -23,7 +25,9 @@ namespace AnimalSimulationGame
 
         private void t_Tick(object sender, EventArgs e)
         {
-            unitsFutterGehegeValues();;
+            unitsFutterGehegeValues();
+            checkBarnIsBuyed();
+
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
@@ -38,6 +42,7 @@ namespace AnimalSimulationGame
             GameManager.isWiesenGehegeBuyed = true;
             GameManager.barnsContainer.Add("wiesengehege");
             GameManager.units -= 500;
+
             showMaxGehegeInfo();
         }
 
@@ -46,6 +51,7 @@ namespace AnimalSimulationGame
             GameManager.isWasserGehegeBuyed = true;
             GameManager.barnsContainer.Add("wassergehege");
             GameManager.units -= 1000;
+
             showMaxGehegeInfo();
         }
 
@@ -55,12 +61,15 @@ namespace AnimalSimulationGame
             {
                 MessageBox.Show("Du hast jetzt die maximale Anzahl an Gehegen gekauft!");
             }
+
+            MessageBox.Show("Kaufe ein Tier, für dieses Gehege!");
         }
 
         public void unitsFutterGehegeValues()
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
 
             if (GameManager.units < 500)
             {
@@ -77,7 +86,17 @@ namespace AnimalSimulationGame
                 wiesenGehegeBtn.IsEnabled = false;
                 wasserGehegeBtn.IsEnabled = false;
             }
+        }
 
+        private void checkBarnIsBuyed()
+        {
+            if(GameManager.isWiesenGehegeBuyed || GameManager.isWasserGehegeBuyed == true)
+            {
+                wiesenGehegeBtn.IsEnabled = false;
+                wasserGehegeBtn.IsEnabled = false;
+            }
+
+            
         }
     }
 }

@@ -15,6 +15,8 @@ namespace AnimalSimulationGame
         public AnimalsHome()
         {
             InitializeComponent();
+            checkBarnContainer();
+
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
@@ -62,6 +64,22 @@ namespace AnimalSimulationGame
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
+        }
+
+        public void checkBarnContainer()
+        {
+
+    
+
+            if(GameManager.isWasserGehegeBuyed || GameManager.isWiesenGehegeBuyed == true)
+            {
+                AnimalStoreBtn.IsEnabled = true;
+            }
+            else
+            {
+                AnimalStoreBtn.IsEnabled = false;
+            }
         }
     }
 }

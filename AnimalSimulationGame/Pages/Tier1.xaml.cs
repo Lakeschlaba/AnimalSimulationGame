@@ -22,8 +22,8 @@ namespace AnimalSimulationGame
         public Tier1()
         {
             InitializeComponent();
-
             initValues();
+
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
@@ -96,6 +96,7 @@ namespace AnimalSimulationGame
 
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
         private void loadBarnPic()

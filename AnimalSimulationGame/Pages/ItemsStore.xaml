@@ -16,7 +16,7 @@
         <Button Name="buySpielzeugBajo" Content="Buy" HorizontalAlignment="Left" Margin="502,355,0,0" VerticalAlignment="Top" Width="171" Height="41" FontSize="15" FontWeight="Bold" Cursor="Hand" IsEnabled="True" Click="buySpielzeugBajo_Click"/>
 
         <Label Content="Universal Futter" HorizontalAlignment="Left" Margin="172,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
-        <Label Name="hundespielzeugBuyBtn" Content="Hundespielzeug" HorizontalAlignment="Left" Margin="522,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Label Content="Hundespielzeug" HorizontalAlignment="Left" Margin="522,113,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
 
         <Image HorizontalAlignment="Left" Height="160" Margin="156,148,0,0" VerticalAlignment="Top" Width="160" Source="pack://application:,,,/Images/futter.png"/>
         <Image HorizontalAlignment="Left" Height="122" Margin="527,168,0,0" VerticalAlignment="Top" Width="121" Source="pack://application:,,,/Images/bajoSpielzeug.png"/>
@@ -26,8 +26,11 @@
 
         <Label Content="Units:" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
         <Label Content="Futter:" HorizontalAlignment="Left" Margin="630,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Dog Toy:" HorizontalAlignment="Left" Margin="630,78,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green" FontWeight="Bold"/>
         <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown" FontWeight="Bold"/>
+        <Label Name="dogToyAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,78,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Blue" FontWeight="Bold"/>
+
         <Label Content="Item Store" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
 
         <Grid.Background>

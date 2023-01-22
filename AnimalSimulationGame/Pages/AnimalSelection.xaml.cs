@@ -15,10 +15,11 @@ namespace AnimalSimulationGame
         public AnimalSelection()
         {
             InitializeComponent();
+            checkAnimalCount();
+
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
-            checkAnimalCount();
         }
 
         private void t_Tick(object sender, EventArgs e)
@@ -70,6 +71,7 @@ namespace AnimalSimulationGame
         {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units + "$";
+            dogToyAnzahlLabel.Content = GameManager.dogToy;
         }
 
         public void checkAnimalCount()

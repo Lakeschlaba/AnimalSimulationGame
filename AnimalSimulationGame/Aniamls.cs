@@ -38,13 +38,14 @@ namespace AnimalSimulationGame
         {
             GameManager.randomChoose = random.Next(5) == 1;
 
+            GameManager.dogToy -= 1;
+
             if (GameManager.randomChoose == true)
             {
                 if (GameManager.wantsDogToy == true)
                 {
                     if (GameManager.dogToy > 0)
                     {
-                        GameManager.dogToy -= 1;
                         GameManager.randomBajoReward = random.Next(50, 1000);
                         GameManager.units += GameManager.randomBajoReward;
                         MessageBox.Show("Bajo hat das Spielzeug geschnappt! und spendet dir " + GameManager.randomBajoReward + "$");

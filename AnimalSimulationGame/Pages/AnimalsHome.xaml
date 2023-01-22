@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AnimalSimulationGame"
         mc:Ignorable="d"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
         Icon="pack://application:,,,/Images/animalSimulationGame.ico"
         WindowStartupLocation="CenterScreen"
         Title="Animals Home" Height="450" Width="800">
-    
+
     <Grid>
+
         <Button Name="AnimalStoreBtn" Content="Animal Store" HorizontalAlignment="Left" Margin="205,119,0,0" VerticalAlignment="Top" Height="44" Width="159" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="AnimalStoreBtn_Click"/>
         <Button Name="BarnStore" Content="Barn Store" HorizontalAlignment="Left" Margin="205,190,0,0" VerticalAlignment="Top" Height="44" Width="159" FontSize="15" FontWeight="Bold" Cursor="Hand" Click="BarnStore_Click"/>
         <Button Name="AnimalSelection" Content="Animal Selection" HorizontalAlignment="Left" Margin="448,119,0,0" VerticalAlignment="Top" Height="44" FontSize="15" FontWeight="Bold" Cursor="Hand" Width="159" Click="AnimalSelection_Click"/>
@@ -18,9 +20,13 @@
 
         <Label Content="Units:" HorizontalAlignment="Left" Margin="630,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
         <Label Content="Futter:" HorizontalAlignment="Left" Margin="630,43,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="15"/>
+        <Label Content="Dog Toy:" HorizontalAlignment="Left" Margin="630,78,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <Label Name="unitsAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,10,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Green" FontWeight="Bold"/>
         <Label Name="futterAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,43,0,0" VerticalAlignment="Top" FontSize="15" Foreground="Brown" FontWeight="Bold"/>
+        <Label Name="dogToyAnzahlLabel" Content="0" HorizontalAlignment="Left" Margin="718,78,0,0" VerticalAlignment="Top" FontSize="16" Foreground="Blue" FontWeight="Bold"/>
+
         <Label Content="Animal Home" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="152" Margin="620,272,0,0" VerticalAlignment="Top" Width="169" gif:ImageBehavior.AnimatedSource="pack://application:,,,/Images/SleepingDog.gif"/>
 
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -29,6 +35,5 @@
                 <GradientStop Color="#ccffcc" Offset="0.7" />
             </LinearGradientBrush>
         </Grid.Background>
-        
     </Grid>
 </Window>
