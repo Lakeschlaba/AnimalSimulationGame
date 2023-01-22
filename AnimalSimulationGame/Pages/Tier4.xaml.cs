@@ -44,14 +44,9 @@ namespace AnimalSimulationGame
             timer.Tick += t_Tick;
             timer.Start();
 
-            timerForRent.Interval = TimeSpan.FromMinutes(1);
+            timerForRent.Interval = TimeSpan.FromMinutes(1.5);
             timerForRent.Tick += t_Tick2;
             timerForRent.Start();
-        }
-
-        private void t_Tick2(object sender, EventArgs e)
-        {
-            viertesTier.rent();
         }
 
         private void t_Tick(object sender, EventArgs e) 
@@ -68,20 +63,26 @@ namespace AnimalSimulationGame
             loadAnimalPic();
         }
 
+        private void t_Tick2(object sender, EventArgs e)
+        {
+            viertesTier.rent();
+        }
+
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             AnimalSelection animalSelectionWindow = new AnimalSelection();
             animalSelectionWindow.Show();
+            timer.Stop();
+            timerForRent.Stop();
             this.Close();
         }
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
-            GameManager.isFedAnimal4 = true;
             viertesTier.eat();
-            GameManager.isFedAnimal4 = false;
-            if (GameManager.foodAmount == 0)
+            if (GameManager.foodAmount <= 0)
             {
+                MessageBox.Show("Du musst Universal-Futter kaufen!");
                 feedBtn1.IsEnabled = false;
             }
         }
@@ -89,6 +90,21 @@ namespace AnimalSimulationGame
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
             viertesTier.streicheln();
+            if (GameManager.wantsStroked4 == false)
+            {
+                MessageBox.Show("Dein " + viertesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
+                streichelnBtn1.IsEnabled = false;
+            }
+            else
+            {
+                streichelnBtn1.IsEnabled = true;
+                GameManager.randomChoose = random.Next(3) == 1;
+
+                if (GameManager.randomChoose == true)
+                {
+                    viertesTier.animalSpeak();
+                }
+            }
             viertesTier.hundespielzeug();
         }
 

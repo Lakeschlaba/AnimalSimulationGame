@@ -14,7 +14,7 @@ namespace AnimalSimulationGame.utils
       
 
         public static int units = 90000;
-        public static int foodAmount = 500;
+        public static int foodAmount = 0;
         public static int dogToy = 0;
         public static int randomBajoReward;
         public static int hunger;
@@ -41,7 +41,11 @@ namespace AnimalSimulationGame.utils
         public static bool isWasserGehegeBuyed;
         public static bool isWiesenGehegeBuyed;
 
-        public static bool wantsStroked;
+        public static bool wantsStroked1;
+        public static bool wantsStroked2;
+        public static bool wantsStroked3;
+        public static bool wantsStroked4;
+
         public static bool wantsDogToy;
 
         public static bool randomChoose;

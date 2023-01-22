@@ -36,7 +36,7 @@ namespace AnimalSimulationGame
         private void t_Tick(object sender, EventArgs e)
         {
             unitsFutterValues();
-            checkAnimalBuyCounter();
+            checkAnimalBuyed();
             
         }
 
@@ -96,7 +96,7 @@ namespace AnimalSimulationGame
             showMaxTiereInfo();
         }
 
-        public void checkAnimalBuyCounter()
+        public void checkAnimalBuyed()
         {
 
             if(GameManager.isDodoBuyed == true)

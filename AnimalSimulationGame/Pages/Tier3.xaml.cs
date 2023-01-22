@@ -15,9 +15,10 @@ namespace AnimalSimulationGame
     {
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer timerForRent = new DispatcherTimer();
-        Animals drittesTier = new DrittesTier();
 
         Random random = new Random();
+
+        Animals drittesTier = new DrittesTier();
 
         public Tier3()
         {
@@ -30,7 +31,7 @@ namespace AnimalSimulationGame
             timer.Tick += t_Tick;
             timer.Start();
 
-            timerForRent.Interval = TimeSpan.FromMinutes(1);
+            timerForRent.Interval = TimeSpan.FromMinutes(1.5);
             timerForRent.Tick += t_Tick2;
             timerForRent.Start();
         }
@@ -58,16 +59,17 @@ namespace AnimalSimulationGame
         {
             AnimalSelection animalSelectionWindow = new AnimalSelection();
             animalSelectionWindow.Show();
+            timer.Stop();
+            timerForRent.Stop();
             this.Close();
         }
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
-            GameManager.isFedAnimal3 = true;
             drittesTier.eat();
-            GameManager.isFedAnimal3 = false;
-            if (GameManager.foodAmount == 0)
+            if (GameManager.foodAmount <= 0)
             {
+                MessageBox.Show("Du musst Universal-Futter kaufen!");
                 feedBtn1.IsEnabled = false;
             }
         }
@@ -75,6 +77,21 @@ namespace AnimalSimulationGame
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
             drittesTier.streicheln();
+            if (GameManager.wantsStroked3 == false)
+            {
+                MessageBox.Show("Dein " + drittesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
+                streichelnBtn1.IsEnabled = false;
+            }
+            else
+            {
+                streichelnBtn1.IsEnabled = true;
+                GameManager.randomChoose = random.Next(5) == 1;
+
+                if (GameManager.randomChoose == true)
+                {
+                    drittesTier.animalSpeak();
+                }
+            }
             drittesTier.hundespielzeug();
         }
 

@@ -98,28 +98,35 @@ namespace AnimalSimulationGame
 
         public void eat()
         {
-            GameManager.foodAmount -= 1;
+            if(GameManager.foodAmount == 0)
+            {
+                GameManager.foodAmount -= 0;
+            }
+            else
+            {
+                GameManager.foodAmount -= 1;
+            }
 
             //Tier1
-            if(GameManager.isFedAnimal1 == true)
+            if (GameManager.foodAmount >= 1)
             {
                 GameManager.foodAnimal1 += 1.5;
             }
 
             //Tier2
-            if (GameManager.isFedAnimal2 == true)
+            if (GameManager.foodAmount >= 1)
             {
                 GameManager.foodAnimal2 += 1.5;
             }
 
             //Tier3
-            if (GameManager.isFedAnimal3 == true)
+            if (GameManager.foodAmount >= 1)
             {
                 GameManager.foodAnimal3 += 1.5;
             }
 
             //Tier4
-            if (GameManager.isFedAnimal4 == true)
+            if (GameManager.foodAmount >= 1)
             {
                 GameManager.foodAnimal4 += 1.5;
             }
@@ -127,32 +134,32 @@ namespace AnimalSimulationGame
 
         public void hunger()
         {
-            GameManager.randomChoose = random.Next(10) == 1;
+            GameManager.randomChoose = random.Next(5) == 1;
 
             if (GameManager.randomChoose == true)
             {
                 //Tier1
                 if(GameManager.foodAnimal1 > 0)
                 {
-                    GameManager.foodAnimal1 -= 0.025;
+                    GameManager.foodAnimal1 -= 0.04;
                 }
 
                 //Tier2
                 if (GameManager.foodAnimal2 > 0)
                 {
-                    GameManager.foodAnimal2 -= 0.025;
+                    GameManager.foodAnimal2 -= 0.04;
                 }
 
                 //Tier3
                 if (GameManager.foodAnimal3 > 0)
                 {
-                    GameManager.foodAnimal3 -= 0.025;
+                    GameManager.foodAnimal3 -= 0.04;
                 }
 
                 //Tier4
                 if (GameManager.foodAnimal4 > 0)
                 {
-                    GameManager.foodAnimal4 -= 0.025;
+                    GameManager.foodAnimal4 -= 0.04;
                 }
             }   
         }
@@ -164,49 +171,41 @@ namespace AnimalSimulationGame
             //Tier1
             if (GameManager.foodAnimal1 <= 0)
             {
-                GameManager.wantsStroked = false;
+                GameManager.wantsStroked1 = false;
             }
-            else if (GameManager.foodAnimal1 > 0)
+            else if (GameManager.foodAnimal1 >= 0.01)
             {
-                GameManager.wantsStroked = true;
+                GameManager.wantsStroked1 = true;
             }
 
             //Tier2
             if (GameManager.foodAnimal2 <= 0)
             {
-                GameManager.wantsStroked = false;
+                GameManager.wantsStroked2 = false;
             }
-            else if (GameManager.foodAnimal2 > 0)
+            else if (GameManager.foodAnimal2 >= 0.01)
             {
-                GameManager.wantsStroked = true;
+                GameManager.wantsStroked2 = true;
             }
 
             //Tier3
             if (GameManager.foodAnimal3 <= 0)
             {
-                GameManager.wantsStroked = false;
+                GameManager.wantsStroked3 = false;
             }
-            else if (GameManager.foodAnimal3 > 0)
+            else if (GameManager.foodAnimal3 >= 0.01)
             {
-                GameManager.wantsStroked = true;
+                GameManager.wantsStroked3 = true;
             }
 
             //Tier4
             if (GameManager.foodAnimal4 <= 0)
             {
-                GameManager.wantsStroked = false;
+                GameManager.wantsStroked4 = false;
             }
-            else if (GameManager.foodAnimal4 > 0)
+            else if (GameManager.foodAnimal4 >= 0.01)
             {
-                GameManager.wantsStroked = true;
-            }
-
-            if (GameManager.randomChoose == true)
-            {
-                if (GameManager.wantsStroked)
-                {
-                    animalSpeak();
-                }
+                GameManager.wantsStroked4 = true;
             }
         }
     }

@@ -28,17 +28,19 @@ namespace AnimalSimulationGame
         DispatcherTimer timer = new DispatcherTimer();
         DispatcherTimer timerForRent = new DispatcherTimer();
 
+        Random random = new Random();
+
         Animals erstesTier = new ErstesTier();
 
         public Tier1()
         {
             InitializeComponent();
-            initLabels();
-            timer.Interval = TimeSpan.FromMilliseconds(1000);
+            initValues();
+            timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += t_Tick;
             timer.Start();
 
-            timerForRent.Interval = TimeSpan.FromMinutes(2);
+            timerForRent.Interval = TimeSpan.FromMinutes(1.5);
             timerForRent.Tick += t_Tick2;
             timerForRent.Start();
         }
@@ -46,14 +48,11 @@ namespace AnimalSimulationGame
         private void t_Tick(object sender, EventArgs e)
         {
 
-            gesundheit1.Value = GameManager.healthAnimal1;
-            futter1.Value = GameManager.foodAnimal1;
-
             erstesTier.health();
             erstesTier.hunger();
+            erstesTier.streicheln();
 
-            initLabels();
-            checkStreicheln();
+            initValues();
             loadBarnPic();
             loadAnimalPic();
         }
@@ -67,40 +66,47 @@ namespace AnimalSimulationGame
         {
             AnimalSelection animalSelectionWindow = new AnimalSelection();
             animalSelectionWindow.Show();
+            timer.Stop();
+            timerForRent.Stop();
             this.Close();
         }
 
         private void feedBtn1_Click(object sender, RoutedEventArgs e)
         {
-            GameManager.isFedAnimal1 = true;
             erstesTier.eat();
-            GameManager.isFedAnimal1 = false;
-            if (GameManager.foodAmount == 0)
+            if (GameManager.foodAmount <= 0)
             {
-                feedBtn1.IsEnabled= false;
+                MessageBox.Show("Du musst Universal-Futter kaufen!");
+                feedBtn1.IsEnabled = false;
             }
         }
 
         private void streichelnBtn1_Click(object sender, RoutedEventArgs e)
         {
             erstesTier.streicheln();
+            if (GameManager.wantsStroked1 == false)
+            {
+                MessageBox.Show("Dein " + erstesTier.animalName + " muss glücklich sein. Um dies zu sein, braucht es Futter!");
+                streichelnBtn1.IsEnabled = false;
+            }
+            else
+            {
+                streichelnBtn1.IsEnabled = true;
+                GameManager.randomChoose = random.Next(5) == 1;
+
+                if(GameManager.randomChoose == true)
+                {
+                    erstesTier.animalSpeak();
+                }
+            }
             erstesTier.hundespielzeug();
         }
 
-        private void checkStreicheln()
+        private void initValues()
         {
-            if(GameManager.wantsStroked == false)
-            {
-                streichelnBtn1.IsEnabled= false;
-            }
-            else if (GameManager.wantsStroked == true)
-            {
-                streichelnBtn1.IsEnabled= true;
-            }
-        }
+            gesundheit1.Value = GameManager.healthAnimal1;
+            futter1.Value = GameManager.foodAnimal1;
 
-        private void initLabels()
-        {
             futterAnzahlLabel.Content = GameManager.foodAmount;
             unitsAnzahlLabel.Content = GameManager.units;
         }
