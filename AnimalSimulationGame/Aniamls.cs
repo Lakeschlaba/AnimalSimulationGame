@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -38,20 +39,49 @@ namespace AnimalSimulationGame
         {
             GameManager.randomChoose = random.Next(5) == 1;
 
-            GameManager.dogToy -= 1;
+             if (GameManager.wantsDogToy == true)
+             {
+                 GameManager.dogToy -= 1;
 
-            if (GameManager.randomChoose == true)
-            {
-                if (GameManager.wantsDogToy == true)
-                {
+                 if (GameManager.randomChoose == true)
+                 {
                     if (GameManager.dogToy > 0)
                     {
                         GameManager.randomBajoReward = random.Next(50, 1000);
                         GameManager.units += GameManager.randomBajoReward;
-                        MessageBox.Show("Bajo hat das Spielzeug geschnappt! und spendet dir " + GameManager.randomBajoReward + "$");
+                        MessageBox.Show("Bajo hat das Spielzeug geschnappt! und schenkt dir " + GameManager.randomBajoReward + "$");
                     }
-                }
+                 }
+             }
+        }
+
+        public void gameOver()
+        {
+            
+            if(GameManager.healthAnimal1 <= 0)
+            {
+                MessageBox.Show("TIERQUÄLER, dein " + animalName + " ist verstorben.");
+                Application.Current.Shutdown();
             }
+
+            if (GameManager.healthAnimal1 <= 0)
+            {
+                MessageBox.Show("TIERQUÄLER, dein " + animalName + " ist verstorben.");
+                Application.Current.Shutdown();
+            }
+
+            if (GameManager.healthAnimal1 <= 0)
+            {
+                MessageBox.Show("TIERQUÄLER, dein " + animalName + " ist verstorben.");
+                Application.Current.Shutdown();
+            }
+
+            if (GameManager.healthAnimal1 <= 0)
+            {
+                MessageBox.Show("TIERQUÄLER, dein " + animalName + " ist verstorben.");
+                Application.Current.Shutdown();
+            }
+
         }
 
         public void health()
@@ -96,6 +126,8 @@ namespace AnimalSimulationGame
                 GameManager.healthAnimal4 -= 0.15;
             }
         }
+
+        
 
         public void eat()
         {

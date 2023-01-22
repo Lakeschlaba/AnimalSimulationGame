@@ -69,9 +69,6 @@ namespace AnimalSimulationGame
 
         public void checkBarnContainer()
         {
-
-    
-
             if(GameManager.isWasserGehegeBuyed || GameManager.isWiesenGehegeBuyed == true)
             {
                 AnimalStoreBtn.IsEnabled = true;

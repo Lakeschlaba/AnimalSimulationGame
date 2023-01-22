@@ -41,6 +41,8 @@ namespace AnimalSimulationGame
 
             viertesTier.health();
             viertesTier.hunger();
+            viertesTier.streicheln();
+            viertesTier.gameOver();
 
             initLabels();
             loadBarnPic();

@@ -38,6 +38,7 @@ namespace AnimalSimulationGame
             erstesTier.health();
             erstesTier.hunger();
             erstesTier.streicheln();
+            erstesTier.gameOver();
 
             initValues();
             loadBarnPic();
