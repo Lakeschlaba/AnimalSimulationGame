@@ -13,7 +13,7 @@ namespace AnimalSimulationGame.utils
 
       
 
-        public static int units = 90000;
+        public static int units = 1500;
         public static int foodAmount = 0;
         public static int dogToy = 0;
 
